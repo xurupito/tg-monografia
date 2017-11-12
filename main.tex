@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper]{ufpr}
+
+% \usepackage[portuges,brazil]{babel}
+% \usepackage[portuguese,brazil]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{isolatin1}
+% \usepackage{auto-pst-pdf}
+%\usepackage{epstopdf}
+% \usepackage{caption2}
+% \usepackage{psfig}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb,amsmath}
+\usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{ifthen,graphicx,color}
+\graphicspath{{figuras/}}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{ps-macros}
+\usepackage[algochapter,linesnumbered,ruled,inoutnumbered]{algorithm2e}
+\usepackage{indentfirst}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{listings, lstautogobble}
+\usepackage{parcolumns}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{float}
+\usepackage[acronym,nonumberlist,nowarn]{glossaries}
+\loadglsentries{0-iniciais/acronimos}
+
+\setcounter{secnumdepth}{3}    % n - numero de niveis de subsubsection numeradas
+\setcounter{tocdepth}{3}       % coloca ate o nivel n no sumario
+
+\newcommand{\todo}[1]{{\color{red}\textbf{\ul{?#1}}}}
+
+\lstset{ %
+    basicstyle=\linespread{0.9}\ttfamily\scriptsize, % Standardschrift
+    language=C,
+    numbers=left,               % Ort der Zeilennummern
+    numberstyle=\tiny,    % Stil der Zeilennummern
+    % ~ numbersep=-15pt,              % Abstand der Nummern zum Text
+    tabsize=2,                  % Groesse von Tabs
+    % extendedchars=true,         %
+    breaklines=true,            % Zeilen werden Umgebrochen
+    % breakatwhitespace=true,
+    % frame=tb,
+    % keywordstyle=\bfseries,
+    % stringstyle=\color{white}\ttfamily, % Farbe der Strings
+    xleftmargin=12pt,
+    % ~ framexleftmargin=0pt,
+    % framexrightmargin=-5pt,
+    % ~ framexleftmargin=-5pt,
+    % framexbottommargin=0pt,
+}
+
+\lstdefinelanguage
+   [x64]{Assembler}     % add a "x64" dialect of Assembler
+   [x86masm]{Assembler} % based on the "x86masm" dialect
+   % with these extra keywords:
+   {morekeywords={_hmc64_saddimm_d, _hmc64_incr_s, %
+                  CDQE,CQO,CMPSQ,CMPXCHG16B,JRCXZ,LODSQ,MOVSXD, %
+                  POPFQ,PUSHFQ,SCASQ,STOSQ,IRETQ,RDTSCP,SWAPGS, %
+                  rax,rdx,rcx,rbx,rsi,rdi,rsp,rbp, %
+                  r8,r8d,r8w,r8b,r9,r9d,r9w,r9b, %
+                  r10,r10d,r10w,r10b,r11,r11d,r11w,r11b, %
+                  r12,r12d,r12w,r12b,r13,r13d,r13w,r13b, %
+                  r14,r14d,r14w,r14b,r15,r15d,r15w,r15b}} % etc.
+
+\lstset{language=[x64]Assembler}
+
+\title{A dança dos partidos: uma análise das coligações partidárias através das eleições}
+% \author {Autor do documento}
+\autores 
+{Guilherme Gomes dos Santos}
+{Rafael Capaci Pereira}
+\advisortitle{Orientador} % ou Orientador
+\advisorname{Prof. Dr. André Luis Vignatti}
+\advisorplace{Departamento de Informática, UFPR}    % departamento, instituicao
+\city{Curitiba}
+\year{2017}
+
+\banca  % nao insira o nome do orientador, ja eh feito automaticamente
+{Prof. Dr. Nome}{Departamento de Informática, UFPR}
+{Prof. Dr. Nome}{Departamento de Informática, UFPR}
+
+\defesa{2017}   % dia em que foi realizada a defesa da dissertacao
+
+
+\begin{document}
+
+% \makecapaproposta            % cria capa para proposta%
+\makecapadissertacao           % cria capa para dissertacao de mestrado %
+\makerosto                     % cria folha de rosto para versao final da UFPR %
+\maketermo                    % cria folha com o termo de aprovacao da dissertacao%
+\pagenumbering{gobble}
+
+%\singlespacing           % espacamento 1 - capa UFPR%
+%\onehalfspacing          % espacamento 1/2 %
+\doublespacing            % espacamento 2 - UFPR %
+
+\pagestyle{headings}
+%\pagenumbering{roman}
+
+% \newpage
+% \input{0-iniciais/dedicatoria.tex}
+
+% \chapter*{Agradecimentos}
+% \input{0-iniciais/agradecimentos.tex}    % possiu somente o texto
+
+\newpage
+\input{0-iniciais/epigrafe.tex}
+
+\pagestyle{headings}
+
+\chapter*{Resumo}
+%\addcontentsline{toc}{chapter}{\uppercase{Resumo}}
+\input{0-iniciais/resumo.tex}      % somente o texto
+\newpage
+
+\chapter*{Abstract}
+%\addcontentsline{toc}{chapter}{\uppercase{Abstract}}
+\input{0-iniciais/abstract.tex}    % somente o texto
+\newpage
+
+% \listoffigures        % se houver mais do que 3 figuras
+% \addcontentsline{toc}{chapter}{\MakeUppercase{Lista de Figuras}}
+% \newpage
+
+%\listoftables          % se houver mais do que 3 tabelas
+%\addcontentsline{toc}{chapter}{\MakeUppercase{Lista de Tabelas}}
+
+\tableofcontents
+
+
+\input{1-intro/texto.tex}
+\input{2-fundamentos/texto.tex}
+\input{3-proposta/texto.tex}
+\input{4-resultados/texto.tex}
+%\input{anexo1.tex}     % se houver anexo
+
+
+
+% utilize macros (3 primeiras letras do mes em ingles, minusculas) no seu
+% .bib para atribuir o nome do mes em portugues nas referencia,
+% se o style for brazil, outros estilos tambem aceitam estas macros
+% Ex:
+%
+% @InProceedings{teste,
+%   author =       {Luciano}
+%   year =         {2000}
+%   month =        {}#sep;
+% }
+%
+
+
+\bibliographystyle{apalike}
+\bibliography{99-final/bibliografia}
+\addcontentsline{toc}{chapter}{REFERÊNCIAS}
+
+
+\singlespacing
+% \makecapadissertacao
+
+\end{document}
