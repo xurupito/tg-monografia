@@ -1,32 +1,114 @@
 % Capítulo 2
 \chapter{Conceitos}
-\label{cap2_conceitos}
+\label{conceitos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Grafo}}{}}
-\label{secao_grafo}
+\label{conceitos__grafo}
 
-Definição de um grafo
+Um \emph{grafo} G é um par ordenado (V[G], E[G]) sendo V[G] um conjunto de \emph{vértices} e E[G] um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de G através de uma \emph{função de incidência} $\psi_{G}$. Seja \emph{e} uma aresta e \emph{u} e \emph{v} vértices em G, tais que $\psi_{G}$(\emph{e}) = \{\emph{u}, \emph{v}\}, assim, pode-se dizer que \emph{e} é uma aresta que \emph{incide} sobre \emph{u} e \emph{v} e que \emph{u} e \emph{v} são as \emph{extremidades} de \emph{e}. Além disto, é dito que \emph{u} e \emph{v} são vizinhos entre si~\cite{bondy1976graph}.
+
+O número de vértices e arestas em G são denotados por |V[G]| e |E[G]|; estes
+dois parâmetros básicos são chamados de \emph{ordem} e \emph{tamanho} de G, respectivamente.
+
+\noindent\emph{Exemplo}.
+
+\makebox[\textwidth]{
+    G = (V[G], E[G])
+}
+
+\noindent onde
+
+\makebox[\textwidth]{
+    V (G) = {u, v, w}
+}
+
+\makebox[\textwidth]{
+    E(G) = \{e$_{0}$, e$_{1}$\}
+}
+
+\noindent e $\psi_{G}$ definida por
+
+\makebox[\textwidth]{
+    $\psi_{G}$(\emph{e$_{0}$}) = \{\emph{u}, \emph{v}\}
+}
+
+\makebox[\textwidth]{
+    $\psi_{G}$(\emph{e$_{1}$}) = \{\emph{v}, \emph{w}\}
+}
+
+Visualmente, este grafo pode ser representado da seguinte forma:
+
+\todo{COLOCAR UM DESENHO DA VISUALIZAÇÃO DO GRAFO DO EXEMPLO ANTERIOR}
+
+%%%%%
+\subsection{Grau de um vértice}
+\label{conceitos__grafo--grau}
+
+\def \variable {\emph{v}}
+
+O \emph{grau} de um vértice \emph{v} em um grafo G, denotado por \emph{d$_{G}$}(\emph{v}), é o número de arestas em G que incidem sobre \emph{v}. De modo particular, \emph{d$_{G}$}(\emph{v}) é o número de vizinhos de \emph{v} em G. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que \emph{d}(G) denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde \emph{n} é o número de vértices de G~\cite{bondy1976graph}.
+
+%%%%%
+
+%%%%%
+\subsection{Peso}
+\label{conceitos__grafo--peso}
+
+Grafos são muito utilizados para modelar problemas reais e, em certos problemas, é preciso incluir alguns atributos especiais, como por exemplo um custo, que está associado com as arestas. Em uma rede de tráfego, por exemplo, esse custo poderia representar a distância entre dois lugares. Esses problemas costumam ser modelados por um grafo ponderado.
+
+Para cada aresta \emph{e} de um grafo G, é associado um número real \emph{w}(\emph{e}), denominado \emph{peso}. Sendo assim, G, com o atributo peso associado as arestas, é chamado de \emph{grafo ponderado}.
+
+%%%%%
+
+\subsection{Componente}
+\label{conceitos__grafo--componente}
+
+Um grafo é dito \emph{conexo} se, para cada par de vértices, existe um \emph{caminho} entre eles, ou seja, uma sequência de vértices onde cada par consecutivo na sequência é ligado por uma aresta.
+
+Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são subconjuntos de vértices desse grafo, onde cada par destes vértices possui um caminho entre eles, ou seja, a componente é conexa. Além disso, as componentes são isoladas, ou seja, não existe aresta ligando vértices de diferentes componentes.
+
+\todo{colocar uma figura de um grafo com componentes distintas}
+
+%%%%%
+\subsection{Componente Gigante}
+\label{conceitos__grafo--componente-gigante}
+
+\emph{Componente gigante} é um termo informal para um componente conexo que contém uma fração significativa de todos os vértices de um grafo.
+
+Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
+
+\todo{colocar uma figura de um grafo com uma componente gigante}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\texorpdfstring{\MakeUppercase{Laços Fracos e Fortes}}{}}
+\label{conceitos__lacos-fortes-fracos}
 
-\section{\texorpdfstring{\MakeUppercase{Coeficiente de clustering}}{}}
-\label{secao_coeficiente_clustering}
+Definição de Laços fortes e fracos
+
+%%%%%
+\subsection{Fechamento Triádico}
+\label{conceitos__lacos-fortes-fracos--fechamento-triadico}
+
+Definição de Fechamento Triádico
+
+%%%%%
+\subsection{Coeficiente de clustering}
+\label{conceitos__lacos-fortes-fracos--coeficiente-clustering}
 
 Definição de Coeficiente de clustering
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Modularidade/comunidades}}{}}
-\label{secao_modularidade_comuidades}
+\label{conceitos__modularidade}
 
 Definição de Modularidade/comunidades
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\texorpdfstring{\MakeUppercase{Partidos Politicos no Brasil}}{}}
+\section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
 \label{secao_partidos_brasil}
 
-Definição de Partidos Politicos no Brasil
+Definição de Partidos Políticos no Brasil
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -34,6 +116,10 @@ Definição de Partidos Politicos no Brasil
 \label{secao_coligacoes}
 
 Definição de Coligações
+
+\todo{além de definir uma coligação, dizer que no trabalho falamos sobre "um partido fazer coligação com outro" como forma de dizer que "os dois partidos pertencem a uma mesma coligação"}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -48,16 +134,18 @@ Definição de Espectro Político: Esquerda x Direita
 \label{secao_auto_declaracao_partidos}
 
 Definição de Auto-denominação dos Partidos: (falar que nem todos se auto declaram, mas de certa forma esse seria um dos objetivo deste trabalho. Explicar que os partidos grandes tem a auto declaração)
-
+s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\texorpdfstring{\MakeUppercase{Dados utilizados}}{}}
-\label{secao_dados_utilizados}
+\section{\texorpdfstring{\MakeUppercase{Visualizações}}{}}
+\label{secao_visualizacoes}
+\subsection{Gephi}
+\label{visualizacoes--gephi}
 
-Definição dos dado: de onde foram tirados, detalhes dos dados, problemas de formatação, ...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo{Explicar sobre o Gephi}
 
-\section{\texorpdfstring{\MakeUppercase{Gephi}}{}}
-\label{secao_gephi}
+\subsection{Layouts}
+\label{visualizacoes--gephi}
 
-Explicar sobre o Gephi
+\todo{Fazer uma subsection para cada layout do gephi que utilizarmos}
+
