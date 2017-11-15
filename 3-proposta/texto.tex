@@ -1,51 +1,176 @@
-% Capítulo 3
-\chapter{Proposta}
-\label{cap3_proposta}
+% Capítulo 2
+\chapter{Conceitos e Definições}
+\label{conceitos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Objetivo Geral}
-\label{secao_objetivo_geral}
+\section{\texorpdfstring{\MakeUppercase{Grafo}}{}}
+\label{conceitos__grafo}
 
-Falar sobre o objetivo geral do trabalho
+Um \emph{grafo} G é um par ordenado (V[G], E[G]) sendo V[G] um conjunto de \emph{vértices} e E[G] um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de G através de uma \emph{função de incidência} $\psi_{G}$. Seja \emph{e} uma aresta e \emph{u} e \emph{v} vértices em G, tais que $\psi_{G}$(\emph{e}) = \{\emph{u}, \emph{v}\}, assim, pode-se dizer que \emph{e} é uma aresta que \emph{incide} sobre \emph{u} e \emph{v} e que \emph{u} e \emph{v} são as \emph{extremidades} de \emph{e}. Além disto, é dito que \emph{u} e \emph{v} são vizinhos entre si~\cite{bondy1976graph}.
+
+O número de vértices e arestas em G são denotados por |V[G]| e |E[G]|; estes
+dois parâmetros básicos são chamados de \emph{ordem} e \emph{tamanho} de G, respectivamente.
+
+\noindent\emph{Exemplo}.
+
+\makebox[\textwidth]{
+    G = (V[G], E[G])
+}
+
+\noindent onde
+
+\makebox[\textwidth]{
+    V (G) = {u, v, w}
+}
+
+\makebox[\textwidth]{
+    E(G) = \{e$_{0}$, e$_{1}$\}
+}
+
+\noindent e $\psi_{G}$ definida por
+
+\makebox[\textwidth]{
+    $\psi_{G}$(\emph{e$_{0}$}) = \{\emph{u}, \emph{v}\}
+}
+
+\makebox[\textwidth]{
+    $\psi_{G}$(\emph{e$_{1}$}) = \{\emph{v}, \emph{w}\}
+}
+
+Visualmente, este grafo pode ser representado da seguinte forma:
+
+\todo{COLOCAR UM DESENHO DA VISUALIZAÇÃO DO GRAFO DO EXEMPLO ANTERIOR}
+
+
+%%%%%
+\subsection{Grafo Completo}
+\label{conceitos__grafo--comleto}
+
+Um \emph{grafo completo} é um grafo onde cada par de vértices é conectado por uma aresta, ou seja, $|E[G]| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo pode ter, onde \emph{n} = |V[G]|.
+
+\todo{Colocar uma figura de grafo completo?}
+
+%%%%%
+\subsection{Clique}
+\label{conceitos__grafo--clique}
+
+Uma \emph{clique} C em um grafo G é um subconjunto de vértices tais que cada par de vértices do subconjunto é conectado por uma aresta. Isso significa dizer que é um \emph{subgrafo} de G, $C \subseteq G$, e que C é completo, ou seja, $|E[C]| = \frac{n_{c}(n_{c}-1)}{2}$, onde $n_{c}$ = |V[C]|.
+
+\todo{Colocar uma figura de clique?}
+
+%%%%%
+\subsection{Grau de um vértice}
+\label{conceitos__grafo--grau}
+
+\def \variable {\emph{v}}
+
+O \emph{grau} de um vértice \emph{v} em um grafo G, denotado por \emph{d$_{G}$}(\emph{v}), é o número de arestas em G que incidem sobre \emph{v}. De modo particular, \emph{d$_{G}$}(\emph{v}) é o número de vizinhos de \emph{v} em G. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que \emph{d}(G) denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde \emph{n} é o número de vértices de G~\cite{bondy1976graph}.
+
+%%%%%
+\subsection{Peso}
+\label{conceitos__grafo--peso}
+
+Grafos são muito utilizados para modelar problemas reais e, em certos problemas, é preciso incluir alguns atributos especiais, como por exemplo um custo, que está associado com as arestas. Em uma rede de tráfego, por exemplo, esse custo poderia representar a distância entre dois lugares. Esses problemas costumam ser modelados por um grafo ponderado.
+
+Para cada aresta \emph{e} de um grafo G, é associado um número real \emph{w}(\emph{e}), denominado \emph{peso}. Sendo assim, G, com o atributo peso associado as arestas, é chamado de \emph{grafo ponderado}.
+
+%%%%%
+
+\subsection{Componente}
+\label{conceitos__grafo--componente}
+
+Um grafo é dito \emph{conexo} se, para cada par de vértices, existe um \emph{caminho} entre eles, ou seja, uma sequência de vértices onde cada par consecutivo na sequência é ligado por uma aresta.
+
+Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são subconjuntos de vértices desse grafo, onde cada par destes vértices possui um caminho entre eles, ou seja, a componente é conexa. Além disso, as componentes são isoladas, ou seja, não existe aresta ligando vértices de diferentes componentes.
+
+\todo{colocar uma figura de um grafo com componentes distintas}
+
+%%%%%
+\subsection{Componente Gigante}
+\label{conceitos__grafo--componente-gigante}
+
+\emph{Componente gigante} é um termo informal utilizado para
+um componente conexo que contém uma fração significativa de todos os vértices de um grafo.
+
+Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
+
+\todo{citar pq q é quase unico como referencia, tipo "teorema tal". \\Ver como explicar isso abaixo direito}
+
+/*Como este é um conceito informal, não existe uma prova formal para explicar o porque um componente gigante é único, porém, vamos supor uma rede mundial, onde cada vértice é uma pessoa e cada aresta entre dois vértices indica que as duas pessoas se conhecem.*/
+
+To see why, let’s go back to the example of the global friendship network and try imagining that there were two giant components, each with hundreds of millions of people.  All it would take is a single edge from someone in the first of these components to someone in the second, and the two giant components would merge into a single component.  Just a single edge — in most cases, it’s essentially inconceivable that some such edge wouldn’t form, and hence two co-existing giant components are something one almost never sees in real networks.  When there is a giant component, it is thus generally unique, distinguishable as a component that dwarfs all others
+
+~\cite{easley2010networks}
+
+\todo{colocar uma figura de um grafo com uma componente gigante}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Objetivos Específicos}
-\label{secao_objetivos_especificos}
+\section{\texorpdfstring{\MakeUppercase{Laços Fracos e Fortes}}{}}
+\label{conceitos__lacos-fortes-fracos}
 
-Objetivos Específicos: ("pontual", em formato de lista. São pequenos objetivos para chegar/alcançar o objetivo geral do trabalho)
+Definição de Laços fortes e fracos
+
+%%%%%
+\subsection{Fechamento Triádico}
+\label{conceitos__lacos-fortes-fracos--fechamento-triadico}
+
+Definição de Fechamento Triádico
+
+%%%%%
+\subsection{Coeficiente de clustering}
+\label{conceitos__lacos-fortes-fracos--coeficiente-clustering}
+
+O fechamento triádico motiva a definição de métricas simples em redes sociais. Uma delas é o coeficiente de clustering.
+
+O \emph{coeficiente de clustering} de um vértice \emph{v} é uma probabilidade de que dois vizinhos de \emph{v}, selecionados aleatoriamente, sejam amigos uns dos outros.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Revisão da Bibliografia}
-\label{secao_revisao_bibliografia}
+\section{\texorpdfstring{\MakeUppercase{Modularidade/comunidades}}{}}
+\label{conceitos__modularidade}
 
-Algo light. Algum trabalho que possa ter motivado o nosso
+Definição de Modularidade/comunidades
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Metodologia}
-\label{secao_metodologia}
+\section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
+\label{conceitos__partidos-brasil}
 
-Passos tomados para alcançar os objetivos
+Definição de Partidos Políticos no Brasil
 
-%%%%%
-\subsection{Modelagem}
-\label{subsecao_modelagem}
-como foi modelado o problema usando grafos?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%
-\subsection{Modularização}
-\label{subsecao_modularizacao}
+\section{\texorpdfstring{\MakeUppercase{Coligações}}{}}
+\label{conceitos__coligacoes}
 
-Modularizar em poucas comunidades (porque poucas?) 
+Definição de Coligações
 
-%%%%%
-\subsection{Informações apresentadas}
-\label{subsecao_infos_apresentadas}
+\todo{além de definir uma coligação, dizer que no trabalho falamos sobre "um partido fazer coligação com outro" como forma de dizer que "os dois partidos pertencem a uma mesma coligação"}
 
-qual é o interesse em apresentar as informações sobre grau médio, coeficiente de clustering, ...        
 
-%%%%%
-\subsection{Ferramentas utilizadas}
-\label{subsecao_ferramentas}
 
-usar gephi para separar por ano as informações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{\texorpdfstring{\MakeUppercase{Espectro Político}}{}}
+\label{conceitos__espectro-politico}
+
+Definição de Espectro Político: Esquerda x Direita
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\texorpdfstring{\MakeUppercase{Auto-declaração dos Partidos}}{}}
+\label{conceitos__auto-declaracao-partidos}
+
+Definição de Auto-denominação dos Partidos: (falar que nem todos se auto declaram, mas de certa forma esse seria um dos objetivo deste trabalho. Explicar que os partidos grandes tem a auto declaração)
+s
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\texorpdfstring{\MakeUppercase{Visualizações}}{}}
+\label{conceitos__visualizacoes}
+\subsection{Gephi}
+\label{conceitos__visualizacoes--gephi}
+
+\todo{Explicar sobre o Gephi}
+
+\subsection{Layouts}
+\label{conceitos__visualizacoes--layouts}
+
+\todo{Fazer uma subsection para cada layout do gephi que utilizarmos}
