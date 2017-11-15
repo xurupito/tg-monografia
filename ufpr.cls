@@ -163,7 +163,7 @@
       \vspace{6cm}
       {\large \textbf{\MakeUppercase\@title}}\\
       \vspace{4cm}
-      
+
       \hfill{\parbox{8cm}{Proposta de Disserta{\c c}{\~a}o de Mestrado
           apresentada  ao Programa   de P{\'o}s-Gradua{\c c}{\~a}o  em
           Inform{\'a}tica, Setor de Ci{\^e}ncias Exatas,
@@ -190,7 +190,7 @@
       \vspace{7cm}
       {\large \textbf{\MakeUppercase\@title}}\\
       \vspace{4cm}
-      
+
       \hfill{\parbox{8cm}{}}\par  \null\vfill
       \MakeUppercase\@city\\
       \vspace{0.5cm}
@@ -210,7 +210,7 @@
       \vspace{6cm}
       {\large \textbf{\MakeUppercase\@title}}\\
       \vspace{4cm}
-      
+
       \hfill{\parbox{8cm}{Trabalho de Gradua{\c   c}{\~a}o apresentado como
            requisito parcial {\`a} obten{\c   c}{\~a}o do grau de Bacharel
            em Ci{\^e}ncia da Computa{\c   c}{\~a}o da Universidade
@@ -244,9 +244,7 @@
       \end{center}
       \vspace{1cm}
       \hfill{\parbox{13.5cm}{
-    %   \begin{itemize}
-      \item[\@advisortitle:] \@banca          
-    %   \end{itemize}
+        \@banca
       }}\par
       \null\vfill
       \begin{center}
@@ -256,9 +254,6 @@
   \end{titlepage}%
   \setcounter{footnote}{0}%
   }
-
-
-
 
 %\newcommand*\chaptermark[1]{}
 \setcounter{secnumdepth}{2}
