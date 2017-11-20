@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper]{ufpr}
 
-% \usepackage[portuges,brazil]{babel}
+\usepackage[portuges,brazil]{babel}
 % \usepackage[portuguese,brazil]{babel}
 %\usepackage[latin1]{inputenc}
 %\usepackage{isolatin1}
@@ -9,14 +9,14 @@
 % \usepackage{caption2}
 % \usepackage{psfig}
 
-\usepackage[brazil]{babel}
+% \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amssymb,amsmath}
 \usepackage{epsfig}
 \usepackage{multirow}
 \usepackage{ifthen,graphicx,color}
-\graphicspath{{figuras/}}
+\graphicspath{{img/}}
 \usepackage{amssymb}
 \usepackage{subfigure}
 \usepackage{graphicx}
@@ -24,11 +24,12 @@
 \usepackage{ps-macros}
 \usepackage[algochapter,linesnumbered,ruled,inoutnumbered]{algorithm2e}
 \usepackage{indentfirst}
-\usepackage{url}
+\usepackage[hyphens]{url}
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{listings, lstautogobble}
 \usepackage{parcolumns}
+\usepackage{subcaption}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{float}
 \usepackage[acronym,nonumberlist,nowarn]{glossaries}
@@ -74,9 +75,9 @@
 
 \lstset{language=[x64]Assembler}
 
-\title{A dança dos partidos: uma análise das coligações partidárias através das eleições}
+\title{Coligações partidárias no Brasil: Uma análise em grafos}
 % \author {Autor do documento}
-\autores 
+\autores
 {Guilherme Gomes dos Santos}
 {Rafael Capaci Pereira}
 \advisortitle{Orientador} % ou Orientador
@@ -142,6 +143,7 @@
 \input{2-fundamentos/texto.tex}
 \input{3-proposta/texto.tex}
 \input{4-resultados/texto.tex}
+\input{99-final/conclusao.tex}
 %\input{anexo1.tex}     % se houver anexo
 
 

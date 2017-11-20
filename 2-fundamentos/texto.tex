@@ -1,5 +1,5 @@
 % Capítulo 2
-\chapter{Conceitos}
+\chapter{Conceitos e Definições}
 \label{conceitos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,32 +14,60 @@ dois parâmetros básicos são chamados de \emph{ordem} e \emph{tamanho} de G, r
 \noindent\emph{Exemplo}.
 
 \makebox[\textwidth]{
-    G = (V[G], E[G])
+    G$_{1}$ = (V[G$_{1}$], E[G$_{1}$])
 }
 
 \noindent onde
 
 \makebox[\textwidth]{
-    V (G) = {u, v, w}
+    V(G$_{1}$) = {u, v, w}
 }
 
 \makebox[\textwidth]{
-    E(G) = \{e$_{0}$, e$_{1}$\}
+    E(G$_{1}$) = \{e$_{0}$, e$_{1}$\}
 }
 
-\noindent e $\psi_{G}$ definida por
+\noindent e $\psi_{G_{1}}$ definida por
 
 \makebox[\textwidth]{
-    $\psi_{G}$(\emph{e$_{0}$}) = \{\emph{u}, \emph{v}\}
+    $\psi_{G_{1}}$(\emph{e$_{0}$}) = \{\emph{u}, \emph{v}\}
 }
 
 \makebox[\textwidth]{
-    $\psi_{G}$(\emph{e$_{1}$}) = \{\emph{v}, \emph{w}\}
+    $\psi_{G_{1}}$(\emph{e$_{1}$}) = \{\emph{v}, \emph{w}\}
 }
 
 Visualmente, este grafo pode ser representado da seguinte forma:
 
-\todo{COLOCAR UM DESENHO DA VISUALIZAÇÃO DO GRAFO DO EXEMPLO ANTERIOR}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{grafo-simples}
+\centering
+\caption{Representação gráfica de G$_{1}$.}
+\end{figure}
+
+%%%%%
+\subsection{Grafo Completo}
+\label{conceitos__grafo--comleto}
+
+Um \emph{grafo completo} G é um grafo onde cada par de vértices é conectado por uma aresta, ou seja, $|E[G]| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo pode ter, onde \emph{n} = |V[G]|.
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{grafo-completo}
+\centering
+\caption{Representação gráfica de um grafo completo.}
+\end{figure}
+
+%%%%%
+\subsection{Clique}
+\label{conceitos__grafo--clique}
+
+Uma \emph{clique} C em um grafo G é um subconjunto de vértices tais que cada par de vértices do subconjunto é conectado por uma aresta. Isso significa dizer C que é um \emph{subgrafo} de G, $C \subseteq G$, e que C é completo, ou seja, $|E[C]| = \frac{n_{c}(n_{c}-1)}{2}$, onde $n_{c}$ = |V[C]|.
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{grafo-clique}
+\centering
+\caption{Representação gráfica de um grafo com cliques, onde cada área colorida representa uma clique}
+\end{figure}
 
 %%%%%
 \subsection{Grau de um vértice}
@@ -48,8 +76,6 @@ Visualmente, este grafo pode ser representado da seguinte forma:
 \def \variable {\emph{v}}
 
 O \emph{grau} de um vértice \emph{v} em um grafo G, denotado por \emph{d$_{G}$}(\emph{v}), é o número de arestas em G que incidem sobre \emph{v}. De modo particular, \emph{d$_{G}$}(\emph{v}) é o número de vizinhos de \emph{v} em G. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que \emph{d}(G) denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde \emph{n} é o número de vértices de G~\cite{bondy1976graph}.
-
-%%%%%
 
 %%%%%
 \subsection{Peso}
@@ -68,84 +94,133 @@ Um grafo é dito \emph{conexo} se, para cada par de vértices, existe um \emph{c
 
 Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são subconjuntos de vértices desse grafo, onde cada par destes vértices possui um caminho entre eles, ou seja, a componente é conexa. Além disso, as componentes são isoladas, ou seja, não existe aresta ligando vértices de diferentes componentes.
 
-\todo{colocar uma figura de um grafo com componentes distintas}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{grafo-componentes}
+\centering
+\caption{Grafo dividido em componentes. Note que um vértice isolado também pode ser visto como uma componente.}
+\end{figure}
 
 %%%%%
 \subsection{Componente Gigante}
 \label{conceitos__grafo--componente-gigante}
 
-\emph{Componente gigante} é um termo informal para um componente conexo que contém uma fração significativa de todos os vértices de um grafo.
+\emph{Componente gigante} é um termo informal utilizado para
+um componente conexo que contém uma fração significativa de todos os vértices de um grafo. Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
 
-Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
+Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacionamentos românticos em uma escola secundária americana. É possível identificar uma componente gigante, onde até estudantes com apenas uma relação estão incluídos nela. Também é fácil perceber que, basta que uma pessoa de uma das componentes menores ter um relacionamento com alguém da componente gigante, que todos os vértices desta componente passarão a fazer parte da componente gigante.
 
-\todo{colocar uma figura de um grafo com uma componente gigante}
+É por este motivo que, quase sempre, uma componente gigante é única em uma rede, pois basta uma aresta de uma componente a outra para que elas se unam, formando uma nova componente única.
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{grafo-componente-gigante}
+\centering
+\caption{
+    Rede de relacionamentos românticos em uma escola secundária americana num período de 18 meses. Fonte:~\cite{bearman2004chains}
+}
+\label{fig:grafo-componente-gigante}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Laços Fracos e Fortes}}{}}
-\label{conceitos__lacos-fortes-fracos}
+\section{\texorpdfstring{\MakeUppercase{Fechamento Triádico}}{}}
+\label{conceitos__fechamento-triadico}
 
-Definição de Laços fortes e fracos
+Na maioria dos estudos de redes sociais, é interessante entender como uma rede evolui através do tempo. O \emph{fechamento triádico} é um princípio básico que auxilia esse entendimento, através da formação de novas arestas.
 
-%%%%%
-\subsection{Fechamento Triádico}
-\label{conceitos__lacos-fortes-fracos--fechamento-triadico}
+Claro que as alterações que as arestas de uma rede podem sofrer dependem muito do tipo de rede que está sendo analisada, porém, o princípio do fechamento tríadico é definido basicamente da seguinte maneira:
 
-Definição de Fechamento Triádico
+\begin{quotation}
+    \emph{Se duas pessoas em uma rede social têm um amigo em comum, então há uma probabilidade maior de se tornarem amigos em algum momento do futuro}~\cite{rapoport1953spread}.
+\end{quotation}
+
+A figura \ref{fig:grafo-fechamento-triadico} ilustra exemplos de fechamentos triádicos. Os vértices \emph{A} e \emph{E} tem o vértice \emph{B} em comum, então a formação de uma nova aresta \emph{A}-\emph{E} produz uma situação onde os três vértices estão conectados. Essa estrutura de três vértices é chamada de \emph{triângulo}. O termo \emph{fechamento triádico} vem do fato de que a aresta \emph{A}-\emph{E} teve o efeito de ‘‘fechar’’ o terceiro lado deste triângulo. Neste exemplo, o mesmo comportamento ocorre com as arestas \emph{B}-\emph{F} e \emph{D}-\emph{G}.
+
+Ao observar grandes redes sociais por um período de tempo, é comum identificar esse tipo de comportamento de fechamento triádico.
+
+\begin{figure}
+    \center
+    \subfigure[fig:fechamento-triadico-antes][Antes de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-antes}}
+    \qquad
+    \subfigure[fig:fechamento-triadico-depois][depois de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-depois}}
+
+    \caption{Ao observar uma rede por um período de tempo, é possível ver que novas arestas são formadas, muitas vezes seguindo o princípio do fechamento triádico.}
+    \label{fig:grafo-fechamento-triadico}
+\end{figure}
 
 %%%%%
 \subsection{Coeficiente de clustering}
-\label{conceitos__lacos-fortes-fracos--coeficiente-clustering}
+\label{conceitos__fechamento-triadico--coeficiente-clustering}
 
-Definição de Coeficiente de clustering
+A regra do fechamento triádico motiva a definição de algumas métricas. Uma delas é o coeficiente de \emph{clustering}.
+
+O \emph{coeficiente de clustering} de um vértice \emph{v} é a probabilidade de que dois de seus vizinhos, selecionados aleatoriamente, sejam conectados por uma aresta.
+
+Na figura \ref{fig:grafo-fechamento-triadico}, por exemplo, o vértice \emph{E} possui coeficiente de \emph{clustering} $\frac{1}{6}$ antes da formação de novas arestas, pois, como \emph{E} tem 4 vizinhos, o número máximo de arestas que poderiam ser formadas entre eles é $\frac{4(4 - 1)}{2} = 6$, mas só existe uma. Após a formação de novas arestas, \emph{E} passa a ter um coeficiente de \emph{clustering} de $\frac{4}{10}$.
+
+O \emph{coeficiente de clustering médio} é dado por $\frac{1}{n}\sum_{v\in V}(C_{v})$, onde $C_{v}$ é o coeficiente de \emph{clustering} do vértice \emph{v}.
+
+\todo{Será que precisa colocar algo sobre coeficiente de clustering em grafo ponderado?}
+
+\todo{ver depois:}
+
+\url{https://arxiv.org/pdf/cond-mat/0311416.pdf}
+
+\url{https://toreopsahl.com/tnet/weighted-networks/clustering/}
+
+\url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.139.9018&rep=rep1&type=pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Modularidade/comunidades}}{}}
 \label{conceitos__modularidade}
 
-Definição de Modularidade/comunidades
+Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc.
+
+\emph{Modularidade} é a medida que busca a divisão de um grafo em comunidades. Quanto maior a modularidade de um grafo, maior a densidade nas conexões entre vértice de uma mesma comunidade.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
-\label{secao_partidos_brasil}
+\label{conceitos__partidos-brasil}
 
 Definição de Partidos Políticos no Brasil
+
+Podemos entender, assim, que o partido político, como pessoa jurídica de direito privado, é um grupo social de relevante amplitude, destinado à arregimentação coletiva, em torno de ideias e de interesses, para levar seus membros a compartilhar do poder decisório nas instâncias governamentais~\cite{michels2010direito}.
+
+(MICHELS, Vera Maria Nunes. Direito Eleitoral. 3. ed. Porto Alegre: Livraria do Advogado, 2004, p. 151)
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{\texorpdfstring{\MakeUppercase{Coligações}}{}}
-\label{secao_coligacoes}
+\label{conceitos__coligacoes}
 
 Definição de Coligações
 
 \todo{além de definir uma coligação, dizer que no trabalho falamos sobre "um partido fazer coligação com outro" como forma de dizer que "os dois partidos pertencem a uma mesma coligação"}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{\texorpdfstring{\MakeUppercase{Espectro Político}}{}}
-\label{secao_espectro_politico}
+\label{conceitos__espectro-politico}
 
 Definição de Espectro Político: Esquerda x Direita
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A esquerda é o espectro ideológico que pretende empoderar grupos sub-representados nas esferas de
+poder; e
+A direita é o espectro ideológico que pretende preservar ou ampliar os poderes de grupos já devidamente
+representados nas esferas de poder.
 
-\section{\texorpdfstring{\MakeUppercase{Auto-declaração dos Partidos}}{}}
-\label{secao_auto_declaracao_partidos}
+SILVA, G. J. . Conceituações Teóricas: Esquerda e Direita. Humanidades em Diálogo (Impresso) , v. VI, p. 149-162, 2014
 
-Definição de Auto-denominação dos Partidos: (falar que nem todos se auto declaram, mas de certa forma esse seria um dos objetivo deste trabalho. Explicar que os partidos grandes tem a auto declaração)
-s
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{\texorpdfstring{\MakeUppercase{Visualizações}}{}}
-\label{secao_visualizacoes}
+\label{conceitos__visualizacoes}
 \subsection{Gephi}
-\label{visualizacoes--gephi}
+\label{conceitos__visualizacoes--gephi}
 
 \todo{Explicar sobre o Gephi}
 
 \subsection{Layouts}
-\label{visualizacoes--gephi}
+\label{conceitos__visualizacoes--layouts}
 
 \todo{Fazer uma subsection para cada layout do gephi que utilizarmos}
-
