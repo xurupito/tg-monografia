@@ -6,7 +6,7 @@
 \section{\texorpdfstring{\MakeUppercase{Grafo}}{}}
 \label{conceitos__grafo}
 
-Um \emph{grafo} G é um par ordenado (V[G], E[G]) sendo V[G] um conjunto de \emph{vértices} e E[G] um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de G através de uma \emph{função de incidência} $\psi_{G}$. Seja \emph{e} uma aresta e \emph{u} e \emph{v} vértices em G, tais que $\psi_{G}$(\emph{e}) = \{\emph{u}, \emph{v}\}, assim, pode-se dizer que \emph{e} é uma aresta que \emph{incide} sobre \emph{u} e \emph{v} e que \emph{u} e \emph{v} são as \emph{extremidades} de \emph{e}. Além disto, é dito que \emph{u} e \emph{v} são vizinhos entre si~\cite{bondy1976graph}.
+Um \emph{grafo} G é um par ordenado (V[G], E[G]) sendo V[G] um conjunto de \emph{vértices} e E[G] um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de G através de uma \emph{função de incidência} $\psi_{G}$. Seja \emph{e} uma aresta e \emph{u} e \emph{v} vértices em G, tais que $\psi_{G}$(\emph{e}) = \{\emph{u}, \emph{v}\}, assim, pode-se dizer que \emph{e} é uma aresta que \emph{incide} sobre \emph{u} e \emph{v} e que \emph{u} e \emph{v} são as \emph{extremidades} de \emph{e}. Além disso, é dito que \emph{u} e \emph{v} são vizinhos entre si.~\cite{bondy1976graph}.
 
 O número de vértices e arestas em G são denotados por |V[G]| e |E[G]|; estes
 dois parâmetros básicos são chamados de \emph{ordem} e \emph{tamanho} de G, respectivamente.
@@ -40,7 +40,7 @@ dois parâmetros básicos são chamados de \emph{ordem} e \emph{tamanho} de G, r
 Visualmente, este grafo pode ser representado da seguinte forma:
 
 \begin{figure}[H]
-\includegraphics[scale=0.5]{grafo-simples}
+\includegraphics[scale=0.4]{grafo-simples}
 \centering
 \caption{Representação gráfica de G$_{1}$.}
 \end{figure}
@@ -52,7 +52,7 @@ Visualmente, este grafo pode ser representado da seguinte forma:
 Um \emph{grafo completo} G é um grafo onde cada par de vértices é conectado por uma aresta, ou seja, $|E[G]| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo pode ter, onde \emph{n} = |V[G]|.
 
 \begin{figure}[H]
-\includegraphics[scale=0.4]{grafo-completo}
+\includegraphics[scale=0.5]{grafo-completo}
 \centering
 \caption{Representação gráfica de um grafo completo.}
 \end{figure}
@@ -64,7 +64,7 @@ Um \emph{grafo completo} G é um grafo onde cada par de vértices é conectado p
 Uma \emph{clique} C em um grafo G é um subconjunto de vértices tais que cada par de vértices do subconjunto é conectado por uma aresta. Isso significa dizer C que é um \emph{subgrafo} de G, $C \subseteq G$, e que C é completo, ou seja, $|E[C]| = \frac{n_{c}(n_{c}-1)}{2}$, onde $n_{c}$ = |V[C]|.
 
 \begin{figure}[H]
-\includegraphics[scale=0.4]{grafo-clique}
+\includegraphics[scale=0.5]{grafo-clique}
 \centering
 \caption{Representação gráfica de um grafo com cliques, onde cada área colorida representa uma clique}
 \end{figure}
@@ -104,7 +104,7 @@ Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são su
 \subsection{Componente Gigante}
 \label{conceitos__grafo--componente-gigante}
 
-\emph{Componente gigante} é um termo informal utilizado para
+\emph{Componente gigante}~\cite{easley2010networks} é um termo informal utilizado para
 um componente conexo que contém uma fração significativa de todos os vértices de um grafo. Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
 
 Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacionamentos românticos em uma escola secundária americana. É possível identificar uma componente gigante, onde até estudantes com apenas uma relação estão incluídos nela. Também é fácil perceber que, basta que uma pessoa de uma das componentes menores ter um relacionamento com alguém da componente gigante, que todos os vértices desta componente passarão a fazer parte da componente gigante.
@@ -115,7 +115,7 @@ Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacio
 \includegraphics[scale=0.6]{grafo-componente-gigante}
 \centering
 \caption{
-    Rede de relacionamentos românticos em uma escola secundária americana num período de 18 meses. Fonte:~\cite{bearman2004chains}
+    Rede de relacionamentos românticos em uma escola secundária americana num período de 18 meses. Fonte:~\cite{bearman2004chains}.
 }
 \label{fig:grafo-componente-gigante}
 \end{figure}
@@ -129,14 +129,14 @@ Na maioria dos estudos de redes sociais, é interessante entender como uma rede 
 Claro que as alterações que as arestas de uma rede podem sofrer dependem muito do tipo de rede que está sendo analisada, porém, o princípio do fechamento tríadico é definido basicamente da seguinte maneira:
 
 \begin{quotation}
-    \emph{Se duas pessoas em uma rede social têm um amigo em comum, então há uma probabilidade maior de se tornarem amigos em algum momento do futuro}~\cite{rapoport1953spread}.
+    \emph{Se duas pessoas em uma rede social têm um amigo em comum, então há uma probabilidade maior de se tornarem amigos em algum momento do futuro}.~\cite{rapoport1953spread}.
 \end{quotation}
 
 A figura \ref{fig:grafo-fechamento-triadico} ilustra exemplos de fechamentos triádicos. Os vértices \emph{A} e \emph{E} tem o vértice \emph{B} em comum, então a formação de uma nova aresta \emph{A}-\emph{E} produz uma situação onde os três vértices estão conectados. Essa estrutura de três vértices é chamada de \emph{triângulo}. O termo \emph{fechamento triádico} vem do fato de que a aresta \emph{A}-\emph{E} teve o efeito de ‘‘fechar’’ o terceiro lado deste triângulo. Neste exemplo, o mesmo comportamento ocorre com as arestas \emph{B}-\emph{F} e \emph{D}-\emph{G}.
 
 Ao observar grandes redes sociais por um período de tempo, é comum identificar esse tipo de comportamento de fechamento triádico.
 
-\begin{figure}
+\begin{figure}[H]
     \center
     \subfigure[fig:fechamento-triadico-antes][Antes de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-antes}}
     \qquad
@@ -158,7 +158,7 @@ Na figura \ref{fig:grafo-fechamento-triadico}, por exemplo, o vértice \emph{E} 
 
 O \emph{coeficiente de clustering médio} é dado por $\frac{1}{n}\sum_{v\in V}(C_{v})$, onde $C_{v}$ é o coeficiente de \emph{clustering} do vértice \emph{v}.
 
-\todo{Será que precisa colocar algo sobre coeficiente de clustering em grafo ponderado?}
+\todo{Será que precisa colocar algo sobre coeficiente de clustering em grafo ponderado? Pq e é diferente e como os nossos grafos são ponderados... Mas não tem mto material por aí}
 
 \todo{ver depois:}
 
@@ -177,22 +177,27 @@ Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{
 \emph{Modularidade} é a medida que busca a divisão de um grafo em comunidades. Quanto maior a modularidade de um grafo, maior a densidade nas conexões entre vértice de uma mesma comunidade.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\texorpdfstring{\MakeUppercase{Sistema Eleitoral Brasileiro}}{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
 \label{conceitos__partidos-brasil}
 
-Definição de Partidos Políticos no Brasil
+Segundo a  Lei nº 9.096, de 1995, que dispõe sobre partidos políticos, o \emph{partido político}, no interesse do regime democrático, destina-se a assegurar a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal~\cite{brasil1996lei9096}. Ou, segundo Vera Maria Nunes Michels:
 
-Podemos entender, assim, que o partido político, como pessoa jurídica de direito privado, é um grupo social de relevante amplitude, destinado à arregimentação coletiva, em torno de ideias e de interesses, para levar seus membros a compartilhar do poder decisório nas instâncias governamentais~\cite{michels2010direito}.
+\begin{quotation}
+    \emph{Podemos entender, assim, que o partido político, como pessoa jurídica de direito privado, é um grupo social de relevante amplitude, destinado à arregimentação coletiva, em torno de ideias e de interesses, para levar seus membros a compartilhar do poder decisório nas instâncias governamentais}~\cite{michels2006direito}.
+\end{quotation}
 
-(MICHELS, Vera Maria Nunes. Direito Eleitoral. 3. ed. Porto Alegre: Livraria do Advogado, 2004, p. 151)
-
+De modo geral, é possível definir os partidos políticos como associações que representam diferentes convicções políticas e organizam um plano de governo de acordo com as ideias que defendem. Podemos apontar as características básicas de ação que definem um partido como: a) o caráter de formação de grupo, já que se trata da união de pessoas com ideias em comum sobre pautas sociais; b) a organização dessas ideias em um plano de conquista de cargos governamentais; c) a administração de um município, estado ou país baseada nas propostas de campanha aliada às correntes de pensamento político que atendem às demandas da população.~\cite{garibaldi2017partidos}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{\texorpdfstring{\MakeUppercase{Coligações}}{}}
 \label{conceitos__coligacoes}
 
-Definição de Coligações
+É comum que diferentes partidos políticos compartilhem ideias, ideais e/ou interesses. Dessa forma, surgem as \emph{coligações partidárias}, que são alianças entre partidos para aumentar suas chances de obter resultados positivos nas urnas.
 
 \todo{além de definir uma coligação, dizer que no trabalho falamos sobre "um partido fazer coligação com outro" como forma de dizer que "os dois partidos pertencem a uma mesma coligação"}
 
