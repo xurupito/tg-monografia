@@ -62,8 +62,7 @@ Percebe-se que o grafo gerado para 1998 não é conexo, contendo dois vértices 
 A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se neste ano, apesar de não ser tão clara quanto em 1994. Isso se dá, em parte, ao fato de que as duas comunidades são mais densas e o grafo possui mais vértices.
 
 É possível observar ainda três partidos de centro-esquerda e um de esquerda na comunidade com predominância de partidos de direita: \gls{PTdoB}, \gls{PGT}, \gls{PTB} e \gls{PST}.
-- dentre os 7 partidos de centro, apenas um ficou no cluster de esquerda
-- os dois cinzas vieram para mais ao centro do grafo, o q significa q fizeram muito mais alianças
+
 
 \subsection{2002}
 \label{resultados__grafos--2002}
@@ -77,6 +76,9 @@ A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se ne
     \caption{comentario}
 \end{figure}
 
+Em 2002 percebe-se a existência de uma discrepância maior no tamanho das comunidades. A menor possui 6 partidos (eram 11 em 1994). Apesar do tamanho reduzido, a comunidade ainda apresenta uma certa divisão ideológica: não existe nenhum partido de direita, sendo composta majoritariamente por partidos de esquerda.
+
+Nota-se também que existem partidos de centro-esquerda na comunidade maior, na qual a maioria dos partidos são de direita. Este agrupamento contém novamente grande parte dos partidos centristas.
 
 \subsection{2006}
 \label{resultados__grafos--2006}
@@ -90,6 +92,9 @@ A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se ne
     \caption{comentario}
 \end{figure}
 
+Neste ano são identificadas 3 comunidades na componente principal e o tamanho das duas comunidades maiores voltou a ser mais equilibrado. O novo agrupamento - de cor cinza no grafo (a) - se posiciona longe dos demais vértices, indicando que o número de conexões destes partidos com  os demais é pequeno. Esta comunidade contém três partidos de extrema-esquerda: \gls{PCB}, \gls{PSOL} e \gls{PSTU}, e sua separação dos demais vértices nos indica que estes partidos (de ideologias muito bem definidas) costumam fazer poucas ou nenhuma aliança com os demais. Entre os três, o único a se aliar com partidos de outras ideologias é o \gls{PCB}, e nota-se que uma destas alianças é com o \gls{PSC}, partido que historicamente se opõe à ideias comunistas.
+
+A distinção entre esquerda e direita torna-se menos presente neste grafo, a comunidade de cor verde do grafo (a) por exemplo, contém partidos de diversas afinidades ideológicas: \gls{PSDB}, \gls{PT}, \gls{PMDB}, \gls{PCdoB}, \gls{PP} e \gls{PL}, por exemplo.
 
 \subsection{2010}
 \label{resultados__grafos--2010}
@@ -103,6 +108,14 @@ A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se ne
     \caption{comentario}
 \end{figure}
 
+Em 2010 foi necessário mudar a resolução, ao utilizar 1.2 como resolução não foi possível separar a componente principal em 2 comunidades. Isso se dá, em parte, porque o grafo gerado para este ano é muito mais denso do que nos anos anteriores, como mostrado na Tabela x. Esta densidade é perceptível visualmente no grafo: os vértices estão muito próximos com uma quantidade grande de arestas entre eles.
+
+Assim, ao aplicar o algoritmo de modularidade com resolução menor obteve-se um número maior de comunidades. Chamamos atenção para a comunidade de cor roxa que conecta apenas dois vértices: \gls{PSDB} e \gls{DEM}. A separação de uma comunidade com apenas estes dois partidos ocorreu pois o grau da aresta que os conecta é 15, indicando que esta aliança ocorreu em 15 estados brasileiros, sendo assim o segundo maior peso do grafo, atrás apenas da aliança \gls{PSTU} e \gls{PSOL}, que ocorreu em 18 estados.
+
+O aumento de comunidades e densidade no grafo dificulta a identificação das ideologias predominantes em cada agrupamento, o que evidencia a redução (em relação aos anos anteriores) de afinidade ideológica presente nas coligações formadas em 2010.
+
+
+
 \subsection{2014}
 \label{resultados__grafos--2014}
 
@@ -115,9 +128,10 @@ A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se ne
     \caption{comentario}
 \end{figure}
 
+Para este grafo também foi necessário utilizar o valor 1.0 como resolução, implicando na identificação de três comunidades. Este grafo é ainda mais denso que os anteriores, e isso é perceptível visualmente. Novamente uma comunidade com partidos de extrema-esquerda é formada, sendo assim o único agrupamento de vértices distantes do restante do grafo.
+
+No grafo (b) percebe-se que de forma geral os vértices vermelhos e azuis se encontram em regiões opostas, dando a impressão de que existe um tipo de separação por ideologia, mas isso não reflete necessariamente a realidade. O aumento na densidade do grafo e a necessidade de alterar o valor de resolução do algoritmo  de modularidade (e ainda assim não sendo possível separar o grafo em duas comunidades) indicam um aumento no número de alianças entre partidos de ideologias diferentes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Conclusão geral}}{}}
-\label{resultados__conclusao-geral}
-
-Conclusão geral
+\section{\texorpdfstring{\MakeUppercase{Gráficos Gerais}}{}}
+\label{resultados__graficos-gerais}
