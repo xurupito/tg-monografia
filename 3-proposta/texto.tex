@@ -26,20 +26,25 @@ Este programa então converte estes dados para o formato \emph{JSON}\footnote{\e
 \label{proposta__modelagem}
 
 Após a obtenção dos dados formatados da maneira desejada, foi definido que seriam analisadas coligações partidárias estaduais em âmbito nacional, para o cargo de deputado. Duas possíveis abordagens para a modelagem em grafos surgiram:
-\begin{itemize}
+\begin{enumarate}
     \item Gerar um grafo por estado. Cada partido político seria um vértice e os partidos que participassem de uma mesma coligação seriam conectados por uma aresta.
-    \item Gerar um grafo ponderado por ano. Cada vértice seria um partido e as arestas conectariam partidos de mesmas coligações. O peso das arestas representaria em quantos estados os dois partidos participam de uma mesma coligação naquele ano.
-\end{itemize}
+    \item Gerar um grafo ponderado por ano. Cada vértice seria um partido e as arestas conectariam partidos de mesmas coligações. Assim, em cada grafo seria possível visualizar como são as alianças partidárias em todo o país.
+\end{enumarate}
 
-Avaliou-se exemplos de grafos dentro do primeiro cenário, e percebeu-se que em cada estado o grafo correspondente apresentava diversas cliques, cada uma sendo uma coligação.
+Avaliou-se exemplos de grafos dentro do cenário 1, e percebeu-se que em cada estado o grafo correspondente apresentava diversas cliques - cada uma sendo uma coligação - como pode ser visto na Figura \ref{grafo-parana-1998}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{img/parana-1998.png}
 \caption{Grafo de coligações do Paraná em 1998.}
+\label{grafo-parana-1998}
 \end{figure}
 
-Percebemos que esta modelagem não seria proveitosa, pois exigiria uma grande quantidade de grafos e mesmo assim não seria possível obter as informações desejadas para este trabalho. Desta forma, adotamos a segunda abordagem.
+Percebemos que esta modelagem não seria proveitosa, pois exigiria uma grande quantidade de grafos e mesmo assim não seria possível obter as informações desejadas para este trabalho. Desta forma, adotamos a abordagem 2.
+
+A segunda abordagem apresenta ainda a opção de utilizar ou não grafos ponderados: o peso das arestas representaria em quantos estados os dois partidos participam de uma mesma coligação naquele ano.
+
+Para exemplificar um dos motivos que nos levou a optar pelo uso de grafos ponderados, suponha um cenário com os partidos A, B e C, de forma que A e B sejam de esquerda e C seja de direita. Numa modelagem em um grafo não ponderado, se A faz aliança com B em quinze15 estados e com C em apenas um1 estado, esta informação seria representada através de duas arestas, uma de A para B e outra de A para C. Neste cenário, o grafo não seria uma representação adequada do comportamento do partido A.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Restrições}}{}}
@@ -52,10 +57,10 @@ Não é difícil perceber que existe falta de consenso dentro do cenário polít
 Por fim, entendemos que foge da proposta deste trabalho discorrer sobre questões socio-políticas a respeito dos dados apresentados, uma vez que estas questões podem ser melhor discutidas por estudiosos de outras áreas do conhecimento, como sociólogos, historiadores e cientistas políticos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Revisão da Bibliografia}}{}}
-\label{proposta__revisao_bibliografia}
+%%\section{\texorpdfstring{\MakeUppercase{Revisão da Bibliografia}}{}}
+%%\label{proposta__revisao_bibliografia}
 
-Algo light. Algum trabalho que possa ter motivado o nosso
+%%Algo light. Algum trabalho que possa ter motivado o nosso
 
 
 %%%%%
@@ -65,7 +70,7 @@ Algo light. Algum trabalho que possa ter motivado o nosso
 \label{proposta__objetivo-geral}
 
 \todo{Talvez seja interessante apresentar algum contexto mais político, falar de informações interessantes q encontramos sei la}
-Este trabalho propõe-se a utilizar o repositório de dados do \gls{TSE} para a construção de grafos referentes às informações de coligações partidárias no Brasil nos anos 1994 à 2014, com o objetivo de exibir métricas e visualizações que possam indicar se as coligações são formadas por partidos de ideologias semelhantes.
+Este trabalho propõe-se a utilizar o repositório de dados do \gls{TSE} para a construção de grafos referentes às informações de coligações partidárias no Brasil nos anos 1994 à 2014, com o objetivo de exibir métricas e visualizações que possam indicar existência de homofilia na formação de alianças políticas, isto é, se as coligações são formadas por partidos de ideologias semelhantes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Objetivos Específicos}}{}}
