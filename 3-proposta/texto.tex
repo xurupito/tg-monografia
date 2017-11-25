@@ -26,10 +26,10 @@ Este programa então converte estes dados para o formato \emph{JSON}\footnote{\e
 \label{proposta__modelagem}
 
 Após a obtenção dos dados formatados da maneira desejada, foi definido que seriam analisadas coligações partidárias estaduais em âmbito nacional, para o cargo de deputado. Duas possíveis abordagens para a modelagem em grafos surgiram:
-\begin{enumarate}
+\begin{enumerate}
     \item Gerar um grafo por estado. Cada partido político seria um vértice e os partidos que participassem de uma mesma coligação seriam conectados por uma aresta.
     \item Gerar um grafo ponderado por ano. Cada vértice seria um partido e as arestas conectariam partidos de mesmas coligações. Assim, em cada grafo seria possível visualizar como são as alianças partidárias em todo o país.
-\end{enumarate}
+\end{enumerate}
 
 Avaliou-se exemplos de grafos dentro do cenário 1, e percebeu-se que em cada estado o grafo correspondente apresentava diversas cliques - cada uma sendo uma coligação - como pode ser visto na Figura \ref{grafo-parana-1998}.
 
@@ -77,28 +77,26 @@ Este trabalho propõe-se a utilizar o repositório de dados do \gls{TSE} para a 
 \label{proposta__objetivos-especificos}
 
 %% Objetivos Específicos: ("pontual", em formato de lista. São pequenos objetivos para chegar/alcançar o objetivo geral do trabalho)
-\subsection{Categorização dos partidos dentro do espectro político brasileiro}
+\subsection{Categorizar partidos dentro do eixo político brasileiro}
 \label{proposta__objetivos-especificos--categorizacao}
 
 Avaliar os dados obtidos no repositório do \gls{TSE} e categorizar todos os partidos encontrados como sendo de esquerda, centro-esquerda, centro, centro-direita e direita. Esta categorização é feita inteiramente baseando-se nas informações apresentadas pelas referências utilizadas neste trabalho.
 
-A classificação dos partidos dentro do espectro político nos permite entender quais partidos - em teoria - possuem afinidades ideológicas, gerando assim um meio de criarmos um referencial de como partidos se relacionariam se eles seguissem suas ideologias como base para criar coligações.
+A classificação dos partidos dentro do espectro político nos permite entender quais partidos - em teoria - possuem afinidades ideológicas, proporcionando assim um referencial de como relacionariam-se caso seguissem suas ideologias como base para criar coligações.
 
-\subsection{Identificação de comunidades}
+\subsection{Identificar comunidades}
 \label{proposta__objetivos-especificos--identificacao-comunidades}
 
 Apresentar grafos para os anos de eleição estadual - 1994, 1998, 2002, 2006, 2010 e 2014 - e aplicar o algoritmo de modularização disponível no Gephi para a identificação de comunidades nestes grafos. Utilizando a categorização dos partidos dentro do espectro político, podemos analisar se as comunidades encontradas seguem algum padrão ideológico.
 
 Optamos por tentar manter os grafos com duas comunidades, o que nos permite identificar se existe alguma divisão entre partidos de esquerda e direita.
 
-\subsection{Análise e comparação dos grafos gerados}
+\subsection{Analisar e comparar os grafos gerados}
 \label{proposta__objetivos-especificos--analise-comparacao}
 
 Utilizar a classificação de espectro político para analisar e comparar qual o padrão ideológico dos partidos presentes nas comunidades encontradas. Isso é feito através da geração de um segundo grafo para cada ano, no qual cada vértice é colorido de acordo com seu espectro político.
 
 Esta abordagem provê uma facilidade na análise das comunidades, já que é possível comparar os grafos lado a lado e identificar relacionamentos entre os partidos, tamanho das comunidades e ideologia politica predominante em cada agrupamento de vértices.
 %%%%%
-\subsection{Informações apresentadas}
-\label{proposta__objetivos-especificos--informacoes-apresentadas}
 
-qual é o interesse em apresentar as informações sobre grau médio, coeficiente de clustering, ...
+ 
