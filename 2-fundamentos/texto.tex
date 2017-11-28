@@ -1,5 +1,5 @@
 % Capítulo 2
-\chapter{Conceitos e Definições}
+\chapter{Conceitos e Defini{\c   c}{\~o}es}
 \label{conceitos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,10 +111,10 @@ Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são su
 \subsection{Componente Gigante}
 \label{conceitos__grafo--componente-gigante}
 
-\emph{Componente gigante}~\cite{easley2010networks} é um termo informal utilizado para
+\emph{Componente gigante}~\cite{easley2010networks} é um termo informal utilizado para 
 um componente conexo que contém uma fração significativa de todos os vértices de um grafo. Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
 
-Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacionamentos românticos em uma escola secundária americana. É possível identificar uma componente gigante, onde até estudantes com apenas uma relação estão incluídos nela. Também é fácil perceber que, basta que uma pessoa de uma das componentes menores ter um relacionamento com alguém da componente gigante, que todos os vértices desta componente passarão a fazer parte da componente gigante.
+Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacionamentos românticos em uma escola secundária americana. É possível identificar uma componente gigante, onde até estudantes com apenas uma relação estão incluídos nela. Também é fácil perceber que, basta que uma pessoa de uma das componentes menores ter um relacionamento com alguém da componente gigante, que todos os vértices desta componente passarão a fazer parte da componente gigante. 
 
 É por este motivo que, quase sempre, uma componente gigante é única em uma rede, pois basta uma aresta de uma componente a outra para que elas se unam, formando uma nova componente única.
 
@@ -144,39 +144,39 @@ Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacio
 % \end{quotation}
 
 % A figura \ref{fig:grafo-fechamento-triadico} ilustra exemplos de fechamentos triádicos. Os vértices \emph{A} e \emph{E} tem o vértice \emph{B} em comum, então a formação de uma nova aresta \emph{A}-\emph{E} produz uma situação onde os três vértices estão conectados. Essa estrutura de três vértices é chamada de \emph{triângulo}. O termo \emph{fechamento triádico} vem do fato de que a aresta \emph{A}-\emph{E} teve o efeito de ‘‘fechar’’ o terceiro lado deste triângulo. Neste exemplo, o mesmo comportamento ocorre com as arestas \emph{B}-\emph{F} e \emph{D}-\emph{G}.
-%
+% 
 % Ao observar grandes redes sociais por um período de tempo, é comum identificar esse tipo de comportamento de fechamento triádico.
-%
+% 
 % \begin{figure}[H]
 %     \center
 %     \subfigure[fig:fechamento-triadico-antes][Antes de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-antes}}
 %     \qquad
 %     \subfigure[fig:fechamento-triadico-depois][depois de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-depois}}
-%
+%      
 %     \caption{Ao observar uma rede por um período de tempo, é possível ver que novas arestas são formadas, muitas vezes seguindo o princípio do fechamento triádico.}
 %     \label{fig:grafo-fechamento-triadico}
 % \end{figure}
-%
+% 
 % %%%%%
 % \subsection{Coeficiente de clustering}
 % \label{conceitos__fechamento-triadico--coeficiente-clustering}
-%
+% 
 % A regra do fechamento triádico motiva a definição de algumas métricas. Uma delas é o coeficiente de \emph{clustering}.
-%
+% 
 % O \emph{coeficiente de clustering} de um vértice \emph{v} é a probabilidade de que dois de seus vizinhos, selecionados aleatoriamente, sejam conectados por uma aresta.
-%
+% 
 % Na figura \ref{fig:grafo-fechamento-triadico}, por exemplo, o vértice \emph{E} possui coeficiente de \emph{clustering} $\frac{1}{6}$ antes da formação de novas arestas, pois, como \emph{E} tem quatro vizinhos, o número máximo de arestas que poderiam ser formadas entre eles é seis, mas só existe uma. Após a formação de novas arestas, \emph{E} passa a ter um coeficiente de \emph{clustering} de $\frac{4}{10}$.
-%
+% 
 % O \emph{coeficiente de clustering médio} de um grafo é dado por $\bar{C = \frac{1}{n}\sum_{v\in V}(C_{v})$, onde $C_{v}$ é o coeficiente de \emph{clustering} do vértice \emph{v}.
-%
+% 
 % \todo{Será que precisa colocar algo sobre coeficiente de clustering em grafo ponderado? Pq e é diferente e como os nossos grafos são ponderados... Mas não tem mto material por aí}
-%
+% 
 % \todo{ver depois:}
-%
+% 
 % \url{https://arxiv.org/pdf/cond-mat/0311416.pdf}
-%
+% 
 % \url{https://toreopsahl.com/tnet/weighted-networks/clustering/}
-%
+% 
 % \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.139.9018&rep=rep1&type=pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -198,9 +198,11 @@ Um dos princípios mais básicos em redes sociais é o de \emph{Homofilia}. Este
 \section{\texorpdfstring{\MakeUppercase{Modularidade e Comunidades}}{}}
 \label{conceitos__modularidade}
 
-Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc.
+Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc. 
 
 \emph{Modularidade} é a medida que busca a divisão de um grafo em comunidades. Quanto maior a modularidade de um grafo, maior a densidade nas conexões entre vértices de uma mesma comunidade.
+
+\todo{talvez colocar componente gigante, homofilia e modularidade em uma outra seção, de redes sociais. Separando as seções em: Grafos, Redes Sociais e Sistema Eleitoral}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Sistema Eleitoral Brasileiro}}{}}
@@ -210,7 +212,7 @@ A Constituição Federal, através do Código Eleitoral, define o sistema eleito
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
 \label{conceitos__partidos-brasil}
-
+    
 Segundo a  Lei nº 9.096, de 1995, que dispõe sobre partidos políticos, o \emph{partido político}, no interesse do regime democrático, destina-se a assegurar a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal~\cite{brasil1995lei9096}. Ou, segundo Vera Maria Nunes Michels:
 
 \begin{quotation}
@@ -219,7 +221,7 @@ Segundo a  Lei nº 9.096, de 1995, que dispõe sobre partidos políticos, o \emp
 
 De modo geral, é possível definir um partido político como um grupo de pessoas com ideias em comum sobre pautas políticas e sociais com o objetivo de formar planos governamentais de acordo com estas ideias~\cite{garibaldi2017partidos}.
 
-Por questões de praticidade, neste trabalho, os partidos políticos serão denotados apenas por \emph{partidos}.
+Por questões de praticidade, neste trabalho, os partidos políticos serão denotados apenas por \emph{partidos}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -257,14 +259,14 @@ No modelo mais básico de espectro político, que será utilizado neste trabalho
 \label{fig:eixo-esquerda-direita}
 \end{figure}
 
-\todo{precisa falar aqui que a gente não precisa entrar em detalhes que explicam exatamente o que é direita x esquerda, ou precisa falar sobre mais especificamente?}
+\todo{precisa falar aqui que a gente não precisa entrar em detalhes que explicam exatamente o que é direita x esquerda, ou precisa falar sobre isso de maneira mais específica?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{\texorpdfstring{\MakeUppercase{Visualizações}}{}}
 \label{conceitos__visualizacoes}
 
-Para a representação gráfica dos grafos foi utilizada a plataforma \emph{Gephi}\footnote{\url{https://gephi.org/}}, um software com licença de código aberto amplamente utilizado para esta finalidade, onde basta importar um arquivo em formato específico para gerar uma visualização do grafo correspondente. Além disso, o \emph{Gephi} fornece vários \emph{plugins} que podem ser utilizados para executar algoritmos sobre o grafo desejado. Estes \emph{plugins} foram utilizados para calcular várias das métricas apresentadas neste trabalho, como \emph{modularidade}, \emph{grau médio} e \emph{densidade}, facilitando consideravelmente a análise.
+Para a representação visual dos grafos foi utilizada a plataforma \emph{Gephi}\footnote{\url{https://gephi.org/}}, um software com licença de código aberto amplamente utilizado para esta finalidade, onde basta importar um arquivo em formato específico para gerar uma visualização do grafo correspondente. Além disso, o \emph{Gephi} fornece vários \emph{plugins} que podem ser utilizados para executar algoritmos sobre o grafo desejado. Estes \emph{plugins} foram utilizados para calcular várias das métricas apresentadas neste trabalho, como \emph{modularidade}, \emph{grau médio} e \emph{densidade}, facilitando consideravelmente a análise.
 
 O \emph{Gephi} também disponibiliza várias formas de visualização de um grafo e dentre estas foram utilizadas duas, \emph{Force Atlas 2} e \emph{Fruchterman-Reingold}, as quais serão explicadas superficialmente, pois no contexto deste trabalho não convém entrar em detalhes de implementação.
 
@@ -275,7 +277,7 @@ As figuras \ref{fig:grafo-force-atlas} e \ref{fig:grafo-fruchterman-reingold} mo
 
 O algoritmo de visualização Force Atlas 2~\cite{jacomy2014forceatlas2} é baseado em força, onde os vértices se repulsam, como se fossem partículas carregadas, e então as arestas atraem os vértices sobre os quais incidem, como as molas. Esta visualização também leva em consideração o peso das arestas e é muito útil quando espera-se uma divisão em comunidades no grafo a ser analisado, pois vértices pertencentes a uma mesma comunidade tendem a ficar próximos.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.6]{grafo-force-atlas}
 \centering
 \caption{
@@ -297,7 +299,7 @@ O Algoritmo de visualização \emph{Fruchterman-Reingold}~\cite{fruchterman1991g
 
 Sendo assim, o algoritmo distribui os vértices uniformemente, tornando também o tamanho das arestas uniforme e refletindo simetria.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.6]{grafo-fruchterman-reingold}
 \centering
 \caption{
@@ -305,3 +307,5 @@ Sendo assim, o algoritmo distribui os vértices uniformemente, tornando também 
 }
 \label{fig:grafo-fruchterman-reingold}
 \end{figure}
+
+\todo{Faz sentido visualizações estar dentro de conceitos e definições? Parece um pouco esquisito, de repente poderia estar em um novo capítulo}
