@@ -1,0 +1,179 @@
+\begin{center}
+\begin{tikzpicture}
+    % G0
+    \begin{axis}[
+            ybar stacked,
+            bar shift=-7pt,
+            nodes near coords,
+            ymin=0,
+            ymax=25,
+            symbolic x coords={1994,1998,2002,2006,2010,2014}]
+        ]
+        % EE
+        \addplot[fill=red] coordinates {
+            (1994,3)
+            (1998,2)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % E
+        \addplot[fill=red!66] coordinates {
+            (1994,4)
+            (1998,3)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % CE
+        \addplot[fill=red!33] coordinates {
+            (1994,2)
+            (1998,2)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % C
+        \addplot[fill=green!66] coordinates {
+            (1994,2)
+            (1998,1)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % CD
+        \addplot[fill=blue!33] coordinates {
+            (1994,0)
+            (1998,0)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % D
+        \addplot[fill=blue!66] coordinates {
+            (1994,0)
+            (1998,0)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % ED
+        \addplot[fill=blue] coordinates {
+            (1994,0)
+            (1998,0)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % SC
+        \addplot[fill=gray] coordinates {
+            (1994,0)
+            (1998,1)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+    \end{axis}
+
+    %G1
+    \begin{axis}[
+            ybar stacked,
+            bar shift=7pt,
+            nodes near coords,
+            ymin=0,
+            ymax=25,
+            symbolic x coords={1994,1998,2002,2006,2010,2014}],
+            legend style={at={(0.5,-0.20)}, nchor=north,legend columns=-1}
+            ]
+        % EE
+        \addplot[fill=red] coordinates {
+            (1994,0)
+            (1998,0)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % E
+        \addplot[fill=red!66] coordinates {
+            (1994,0)
+            (1998,1)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % CE
+        \addplot[fill=red!33] coordinates {
+            (1994,1)
+            (1998,3)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % C
+        \addplot[fill=green!66] coordinates {
+            (1994,3)
+            (1998,6)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % CD
+        \addplot[fill=blue!33] coordinates {
+            (1994,2)
+            (1998,2)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % D
+        \addplot[fill=blue!66] coordinates {
+            (1994,4)
+            (1998,5)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % ED
+        \addplot[fill=blue] coordinates {
+            (1994,0)
+            (1998,0)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        % SC
+        \addplot[fill=gray] coordinates {
+            (1994,2)
+            (1998,2)
+            (2002,0)
+            (2006,0)
+            (2010,0)
+            (2014,0)
+        };
+        \legend {
+            \strut EE,
+            \strut E,
+            \strut CE,
+            \strut C,
+            \strut CD,
+            \strut D,
+            \strut ED
+        }
+    \end{axis}
+\end{tikzpicture}
+\end{center}
