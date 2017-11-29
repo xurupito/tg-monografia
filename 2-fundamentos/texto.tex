@@ -3,7 +3,7 @@
 \label{conceitos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Grafo}}{}}
+\section{Grafo}
 \label{conceitos__grafo}
 
 Um \emph{grafo} $G$ é um par ordenado $(V[G], E[G])$ sendo $V[G]$ um conjunto de \emph{vértices} e $E[G]$ um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de $G$ através de uma \emph{função de incidência} $\psi_{G}$. Seja $e$ uma aresta e $u$ e $v$ vértices em $G$, tais que $\psi_{G}(e) = \{u, v\}$, assim, pode-se dizer que $e$ é uma aresta que \emph{incide} sobre $u$ e $v$ e que $u$ e $v$ são as \emph{extremidades} de $e$. Além disso, é dito que $u$ e $v$ são \emph{vizinhos} entre si.~\cite{bondy1976graph}.
@@ -179,7 +179,7 @@ Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacio
 % \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.139.9018&rep=rep1&type=pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Homofilia}}{}}
+\section{Homofilia}
 \label{conceitos__homofilia}
 
 Um dos princípios mais básicos em redes sociais é o de \emph{homofilia}. Este princípio diz que as pessoas tendem a ser semelhantes aos seus amigos. Ao observar grupos de amigos, é comum ver que as pessoas de cada grupo compartilham várias características, como por exemplo etnia, idade, interesses, crenças, etc. Claro que as redes sociais não se limitam a este comportamento somente, podendo existir conexões entre pessoas com características diferentes, mas de maneira generalizada, as conexões são formadas entre semelhantes~\cite{easley2010networks}.
@@ -194,7 +194,7 @@ Um dos princípios mais básicos em redes sociais é o de \emph{homofilia}. Este
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Modularidade e Comunidades}}{}}
+\section{Modularidade e Comunidades}
 \label{conceitos__modularidade}
 
 Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas informalmente como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc. 
@@ -204,12 +204,12 @@ Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{
 \todo{talvez colocar componente gigante, homofilia e modularidade em uma outra seção, de redes sociais. Separando as seções em: Grafos, Redes Sociais e Sistema Eleitoral}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Sistema Eleitoral Brasileiro}}{}}
+\section{Sistema Eleitoral Brasileiro}
 
 A Constituição Federal, através do Código Eleitoral, define o sistema eleitoral brasileiro como um sistema misto, com eleições \emph{majoritárias} para os cargos executivos, - Prefeitura, Senado e Presidência - e \emph{proporcionais} para os cargos legislativos - Câmara dos Deputados, Assembleias Legislativas e Câmaras Municipais - onde podem concorrer às eleições somente candidatos registrados por partidos políticos~\cite{brasil1965lei4737}. Além disso, o sistema eleitoral brasileiro é regulado pelo \gls{TSE}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
+\section{Partidos Políticos no Brasil}
 \label{conceitos__partidos-brasil}
     
 Segundo a  Lei nº 9.096~\cite{brasil1995lei9096}, que dispõe sobre partidos políticos, o \emph{partido político}, no interesse do regime democrático, destina-se a assegurar a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal. Ou segundo ~\cite{michels2006direito}:
@@ -224,7 +224,7 @@ Por questões de praticidade, neste trabalho, os partidos políticos serão refe
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\texorpdfstring{\MakeUppercase{Coligações Partidárias}}{}}
+\section{Coligações Partidárias}
 \label{conceitos__coligacoes}
 
 É comum que diferentes partidos políticos compartilhem ideias, ideais e/ou interesses, de modo que formem alianças entre si. Estas alianças são permitidas e regulamentadas na maioria das democracias e no Brasil não é diferente, sendo então chamadas de \emph{coligações partidárias} ou simplesmente \emph{coligações}.
@@ -242,7 +242,7 @@ Neste trabalho, é dito que ‘‘um partido faz coligação com outro’’ com
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\texorpdfstring{\MakeUppercase{Espectro Político}}{}}
+\section{Espectro Político}
 \label{conceitos__espectro-politico}
 
 Nas seções anteriores, vimos que partidos e coligações se reúnem, em teoria, através de ideais em comum. Um sistema utilizado para classificar ideologias e posições políticas é o \emph{espectro político}.
@@ -262,7 +262,7 @@ Está fora do escopo deste trabalho explicar tais classificações do espectro p
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\texorpdfstring{\MakeUppercase{Visualizações}}{}}
+\section{Visualizações}
 \label{conceitos__visualizacoes}
 
 Para a representação visual dos grafos foi utilizada a plataforma \emph{Gephi}\footnote{\url{https://gephi.org/}}, um software com licença de código aberto amplamente utilizado para esta finalidade, onde basta importar um arquivo em formato específico para gerar uma visualização do grafo correspondente. Além disso, o \emph{Gephi} fornece vários \emph{plugins} que podem ser utilizados para executar algoritmos sobre o grafo desejado. Estes \emph{plugins} foram utilizados para calcular várias das métricas apresentadas neste trabalho, como \emph{modularidade}, \emph{grau médio} e \emph{densidade}, facilitando consideravelmente a análise.
@@ -306,3 +306,4 @@ Sendo assim, o algoritmo distribui os vértices uniformemente, tornando também 
 }
 \label{fig:grafo-fruchterman-reingold}
 \end{figure}
+

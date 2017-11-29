@@ -46,7 +46,6 @@ Ao comparar as duas visualizações do grafo de 1994 podemos perceber que as dua
 
 \begin{table}[H]
 \centering
-\label{table-1994}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Total de arestas  & 142 & Modularidade         & 0,230 \\ \hline
@@ -55,6 +54,7 @@ Vértices em $C_0$    & 12 (52,17\%)  & Grau Médio Ponderado & 33,043 \\ \hline
 Vértices em $C_1$    & 11 (47.83\%) & Densidade            &  0,561\\ \hline
 \end{tabular}
 \caption{Métricas do grafo de coligações em 1994}
+\label{table-1994}
 \end{table}
 
 Ressalta-se que esta divisão dos vértices não significa que partidos da esquerda só fazem aliança com partidos de mesma ideologia por exemplo. As arestas dos grafos tendem a manter a cor dos vértices em que elas incidem, mas na figura \ref{fig:grafos-1994-a} podemos ver uma grande quantidade de arestas cinzas, que apresentam esta cor por conectar vértices rosas e verdes. Isto significa que existem várias alianças sendo feitas entre os partidos das duas comunidades opostas.
@@ -82,7 +82,6 @@ A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se ne
 
 \begin{table}[H]
 \centering
-\label{table-1998}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Total de arestas  & 295 & Modularidade         & 0,161 \\ \hline
@@ -91,6 +90,7 @@ Vértices em $C_0$    & 19  (63,33\%) & Grau Médio Ponderado & 50,533 \\ \hline
 Vértices em $C_1$    & 9 (30\%) & Densidade            &  0,678\\ \hline
 \end{tabular}
 \caption{Números absolutos e relativos do grafo de coligações em 1998}
+\label{table-1998}
 \end{table}
 
 Embora este grafo apresente apenas dois vértices a mais do que em 1994, o número de arestas aumentou consideravelmente: 295 em 1998, mais do que o dobro de arestas em 1994, indicando um crescimento expressivo na quantidade de alianças feitas.
@@ -114,7 +114,6 @@ Nota-se também que existem partidos de centro-esquerda em $C_0$, na qual a maio
 
 \begin{table}[H]
 \centering
-\label{table-2002}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Total de arestas  & 269 & Modularidade         & 0,101 \\ \hline
@@ -123,6 +122,7 @@ Vértices em $C_0$    & 22  (73,33\%) & Grau Médio Ponderado & 47,733 \\ \hline
 Vértices em $C_1$    & 6 (20\%) & Densidade            &  0,618\\ \hline
 \end{tabular}
 \caption{Números absolutos e relativos do grafo de coligações em 2002}
+\label{table-2002}
 \end{table}
 
 \subsection{2006}
@@ -141,7 +141,6 @@ Neste ano são identificadas três comunidades na componente principal e o taman
 
 \begin{table}[H]
 \centering
-\label{table-2006a}
 \begin{tabular}{|l|l|}
 \hline
 Comunidade & Vértices \\ \hline
@@ -150,13 +149,13 @@ $C_1$         &     13 (39,39\%)                \\ \hline
 $C_2$         &       3 (9,09\%)               \\ \hline
 \end{tabular}
 \caption{Tamanho das comunidades em 2006}
+\label{table-2006a}
 \end{table}
 
 A distinção entre esquerda e direita torna-se menos presente neste grafo, a comunidade $C_1$ por exemplo, contém legendas de diversas afinidades ideológicas: \gls{PSDB}, \gls{PT}, \gls{PMDB}, \gls{PCdoB}, \gls{PP} e \gls{PL}. Entre os anos utilizado neste estudo, 2006 é o que apresenta o grafo menos denso, como mostrado na Tabela \ref{table-2006b}.
 
 \begin{table}[H]
 \centering
-\label{table-2006b}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Total de arestas  & 222 & Grau Médio           & 15,31 \\ \hline
@@ -164,6 +163,7 @@ Total de vértices & 29 & Grau Médio Ponderado & 43,103 \\ \hline
 Modularidade      & 0,196 & Densidade            & 0,547 \\ \hline
 \end{tabular}
 \caption{Números absolutos do grafo de coligações em 2006}
+\label{table-2006b}
 \end{table}
 
 \subsection{2010}
@@ -182,7 +182,6 @@ Em 2010 foi necessário mudar a resolução, ao utilizar 1,2 como parâmetro nã
 
 \begin{table}[H]
 \centering
-\label{table-2010a}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Total de arestas  & 245 & Grau Médio           & 18,148 \\ \hline
@@ -190,13 +189,13 @@ Total de vértices & 27 & Grau Médio Ponderado & 52,889 \\ \hline
 Modularidade      & 0,158 & Densidade            & 0,698 \\ \hline
 \end{tabular}
 \caption{Números absolutos do grafo de coligações em 2010}
+\label{table-2010a}
 \end{table}
 
 Assim, ao aplicar o algoritmo de modularidade com resolução menor obteve-se um número maior de comunidades, como mostrado na Figura \ref{resultados__grafos--2010} (a) e na Tabela \ref{table-2010b}. Chamamos atenção para a comunidade de cor rosa que conecta apenas dois vértices: \gls{PSDB} e \gls{DEM}. A separação de uma comunidade com apenas estes dois partidos ocorreu pois o grau da aresta que os conecta é 15, indicando que esta aliança ocorreu em 15 estados brasileiros, sendo assim o segundo maior peso do grafo, atrás apenas da aliança \gls{PSTU} e \gls{PSOL}, que ocorreu em 18 estados.
 
 \begin{table}[H]
 \centering
-\label{table-2014a}
 \begin{tabular}{|l|l|}
 \hline
 Comunidade & Vértices \\ \hline
@@ -207,11 +206,12 @@ $C_3$         &       6 (22,22\%)               \\ \hline
 $C_4$         &       2 (7,4\%)               \\ \hline
 \end{tabular}
 \caption{Tamanho das comunidades em 2010}
+\label{table-2010b}
 \end{table}
 
 O aumento de comunidades e densidade no grafo dificulta a identificação das ideologias predominantes em cada agrupamento, o que evidencia a redução (em relação aos anos anteriores) de afinidade ideológica presente nas coligações formadas em 2010.
 
-
+%%%%%
 \subsection{2014}
 \label{resultados__grafos--2014}
 
@@ -229,7 +229,6 @@ O aumento de comunidades e densidade no grafo dificulta a identificação das id
 Para este grafo também foi necessário utilizar o valor 1,0 como resolução, implicando na identificação de quatro comunidades, como mostra a Tabela \ref{table-2014a}. Ele é ainda mais denso que os anteriores e apresenta o maior número de arestas até então (vide Tabela \ref{table-2014b}, o que é perceptível visualmente. Novamente uma comunidade com partidos de extrema-esquerda é formada, sendo assim o único agrupamento de vértices distantes do restante do grafo. 
 \begin{table}[H]
 \centering
-\label{table-2014b}
 \begin{tabular}{|l|l|}
 \hline
 Comunidade & Vértices \\ \hline
@@ -239,12 +238,12 @@ $C_2$         &       3 (9,37\%)               \\ \hline
 $C_3$         &       7 (21,87\%)               \\ \hline
 \end{tabular}
 \caption{Tamanho das comunidades em 2014}
+\label{table-2014a}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\label{table-2010a}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Total de arestas  & 356 & Grau Médio           & 22,25 \\ \hline
@@ -252,6 +251,7 @@ Total de vértices & 32 & Grau Médio Ponderado & 69,25 \\ \hline
 Modularidade      & 0,138 & Densidade            & 0,718 \\ \hline
 \end{tabular}
 \caption{Números absolutos do grafo de coligações em 2014}
+\label{table-2014b}
 \end{table}
 
 Na Figura \ref{resultados__grafos--2014} (b) percebe-se que de forma geral os vértices vermelhos e azuis se encontram em regiões opostas, dando a impressão de que existe um tipo de separação por ideologia, mas isso não reflete necessariamente a realidade. O aumento na densidade do grafo e a necessidade de alterar o valor de resolução do algoritmo  de modularidade (mesmo assim não sendo possível separar o grafo em duas comunidades) indicam um aumento no número de alianças entre partidos de ideologias diferentes. 
@@ -302,3 +302,4 @@ A Figura \ref{fig:grafico-comunidades} permite uma visão mais ampla da distribu
 
 
 Analisando o gráfico é possível perceber que para os anos 1994 e 1998 as comunidades apresentavam uma distinção clara de afinidade ideológica dos seus partidos, indicando que nestes anos as coligações foram formadas no geral por legendas de ideologias parecidas. Isso deixou de ocorrer ao longo dos próximos anos, o número de alianças entre partidos diversos aumentou e as comunidades começaram a apresentar mais diversidade ideológica.
+
