@@ -331,9 +331,9 @@
                          \refstepcounter{chapter}%
                          \typeout{\@chapapp\space\thechapter.}%
                          \addcontentsline{toc}{chapter}%
-                                   {\protect\numberline{\thechapter}\uppercase{#1}}%
+                                   {\protect\numberline{\thechapter}#1}%
                     \else
-                      \addcontentsline{toc}{chapter}{\uppercase{#1}}%
+                      \addcontentsline{toc}{chapter}{#1}%
                     \fi
                     %\chaptermark{#1}%
                     \addtocontents{lof}{\protect\addvspace{10\p@}}%
@@ -734,3 +734,4 @@
 \endinput
 %%
 %% End of file `ufpr.cls'.
+

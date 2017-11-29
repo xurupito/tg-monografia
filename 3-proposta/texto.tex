@@ -3,7 +3,7 @@
 \label{proposta}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Metodologia}}{}}
+\section{Metodologia}
 \label{proposta__metodologia}
 
 O site do \gls{TSE} fornece um repositório de dados eleitorais\footnote{\url{http://www.tse.jus.br/eleitor-e-eleicoes/estatisticas/repositorio-de-dados-eleitorais-1}} que contém um compilado de informações brutas das eleições no Brasil, sendo assim um meio para pesquisadores, imprensa e pessoas interessadas analisarem dados de candidatura, eleitorado, resultados e prestação de contas. Estes dados são fornecidos em arquivos no formato \emph{.csv}, de forma que consultas, filtros e cruzamento de dados são de responsabilidade do pesquisador.
@@ -19,7 +19,7 @@ A próxima etapa foi realizar o tratamento destes dados brutos, afim de extrair 
 Este programa então lê e converte os arquivos de dados para o formato \emph{JSON}\footnote{\emph{Javascript Object Notation}: formato de padrão aberto utilizado para transmitir objetos de dados consistindo de pares chave-valor.}, que é o formato utilizado em \emph{Javascript} para representar objetos em memória em tempo de execução. Este formato e as facilidades da linguagem permitem que seja realizado um filtro dos dados, de maneira rápida e prática. Após a filtragem dos dados, trabalhamos em moldá-los em uma estrutura de grafos, ainda no formato \emph{JSON}. Por fim, são gerados os arquivos de saída em formato \emph{.gexf}\footnote{Formato padrão do \emph{Gephi}, muito similar ao formato \emph{.xml}, mas com algumas particularidades. Especificação do formato \emph{.gexf} disponível em: \url{https://gephi.org/gexf/format}.}. São gerados vários arquivos de saída, sendo um para cada ano de eleição. Este programa está disponível, de maneira aberta e gratuita, em \url{https://github.com/xurupito/tg-parser}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Modelagem}}{}}
+\section{Modelagem}
 \label{proposta__modelagem}
 
 Após a obtenção dos dados formatados da maneira desejada, foi definido que seriam analisadas coligações partidárias estaduais em âmbito nacional, para o cargo de deputado. Duas possíveis abordagens para a modelagem em grafos surgiram:
@@ -44,7 +44,7 @@ A segunda abordagem apresenta ainda a opção de utilizar ou não grafos pondera
 Para exemplificar um dos motivos que nos levou a optar pelo uso de grafos ponderados, suponha um cenário com os partidos A, B e C, de forma que A e B sejam de esquerda e C seja de direita. Numa modelagem em um grafo não ponderado, se A faz aliança com B em quinze estados e com C em apenas um estado, esta informação seria representada através de duas arestas, uma de A para B e outra de A para C. Neste cenário, o grafo não seria uma representação adequada do comportamento do partido A.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Restrições}}{}}
+\section{Restrições}
 \label{proposta__restricoes}
 
 A divisão ideológica dos partidos no Brasil não é trivial, no atual sistema político existem siglas com programas vagos e ideologias pouco claras, o que dificulta sua categorização dentro do espectro político. Com isso tornou-se inviável a categorização de alguns partidos presentes nos grafos apresentados neste trabalho.
@@ -54,7 +54,7 @@ Não é difícil perceber que existe falta de consenso dentro do cenário polít
 Por fim, entendemos que foge da proposta deste trabalho discorrer sobre questões socio-políticas a respeito dos dados apresentados, uma vez que estas questões podem ser melhor discutidas por estudiosos de outras áreas do conhecimento. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\section{\texorpdfstring{\MakeUppercase{Revisão da Bibliografia}}{}}
+%%\section{Revisão da Bibliografia}
 %%\label{proposta__revisao_bibliografia}
 
 %%Algo light. Algum trabalho que possa ter motivado o nosso
@@ -63,13 +63,13 @@ Por fim, entendemos que foge da proposta deste trabalho discorrer sobre questõe
 %%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Objetivo Geral}}{}}
+\section{Objetivo Geral}
 \label{proposta__objetivo-geral}
 
 Este trabalho propõe-se a utilizar o repositório de dados do \gls{TSE} para a construção de grafos referentes às informações de coligações partidárias no Brasil nos anos 1994 à 2014, com o objetivo de exibir métricas e visualizações que possam indicar existência de homofilia na formação de alianças políticas, isto é, se as coligações são formadas por partidos de ideologias semelhantes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\texorpdfstring{\MakeUppercase{Objetivos Específicos}}{}}
+\section{Objetivos Específicos}
 \label{proposta__objetivos-especificos}
 
 %% Objetivos Específicos: ("pontual", em formato de lista. São pequenos objetivos para chegar/alcançar o objetivo geral do trabalho)
