@@ -12,9 +12,9 @@ Vértices em tons de vermelho são partidos de centro-esquerda, esquerda e extre
 São apresentadas métricas referentes à densidade, grau médio, grau médio ponderado e modularidade, afim de facilitar a análise dos grafos gerados.
 
 
-O grau médio da rede representa quantas alianças diferentes, em média, cada partido fez. Como visto na sessão \ref{proposta__modelagem}, utilizamos pesos nas arestas dos grafos como forma de indicar em quantos estados os partidos em questão participam de uma mesma coligação. Assim, os grafos apresentados não indicam apenas quais são as alianças formadas, mas também o quão forte é um relacionamento entre dois partidos. O peso de cada aresta pode ser percebido na visualização dos grafos: quanto mais grossa a linha for maior o peso da aresta sendo representada.
+O grau médio da rede representa quantas alianças diferentes, em média, cada partido fez. Como visto na seção \ref{proposta__modelagem}, utilizamos pesos nas arestas dos grafos como forma de indicar em quantos estados os partidos em questão participam de uma mesma coligação. Assim, os grafos apresentados não indicam apenas quais são as alianças formadas, mas também o quão forte é um relacionamento entre dois partidos. O peso de cada aresta pode ser percebido na visualização dos grafos, quanto mais grossa a linha for maior o peso da aresta sendo representada.
 
-A densidade do grafo fornece uma visão geral de como as coligações se comportam. Isto é, uma componente muito densa indica que os partidos fazem muitas alianças diferentes, portanto a afinidade ideológica é tem pouca influência na formação destas coligações.
+A densidade do grafo fornece uma visão geral de como as coligações se comportam. Isto é, uma componente muito densa indica que os partidos fazem muitas alianças diferentes, portanto a afinidade ideológica tem pouca influência na formação destas coligações.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Parâmetros para modularização}}{}}
@@ -22,7 +22,7 @@ A densidade do grafo fornece uma visão geral de como as coligações se comport
 
 Para a utilização do algoritmo de detecção de comunidades é necessário escolher um parâmetro de \emph{resolução}, quanto maior o valor deste parâmetro menos comunidades são geradas.
 
-Assim, utilizamos o valor de resolução 1.2 para os grafos de 1994, 1998, 2002 e 2006. Com este parâmetro, o algoritmo de modularização conseguiu separar a componente gigante dos grafos em duas comunidades. Para os anos 2010 e 2014 percebeu-se a necessidade de reduzir o valor de resolução para 1.0, uma vez que ao utilizar 1.2 como parâmetro a componente gigante se tornava uma única comunidade (mais detalhes em \nameref{resultados__grafos--2010} e \ref{resultados__grafos--2014}).
+Assim, utilizamos o valor de resolução 1,2 para os grafos de 1994, 1998, 2002 e 2006. Com este parâmetro, o algoritmo de modularização conseguiu separar a componente gigante dos grafos em duas comunidades. Para os anos 2010 e 2014 percebeu-se a necessidade de reduzir o valor de resolução para 1,0, uma vez que ao utilizar 1,2 como parâmetro a componente gigante se tornava uma única comunidade (mais detalhes nas seções \ref{resultados__grafos--2010} e \ref{resultados__grafos--2014}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Grafos}}{}}
@@ -35,14 +35,14 @@ Assim, utilizamos o valor de resolução 1.2 para os grafos de 1994, 1998, 2002 
 
 \begin{figure}[H]
 \center
-    \subfigure[fig-1994][Comunidades C0 (vértices rosas) e C1 (vértices verdes)]{\includegraphics[width=7.5cm]{img/grafos/1994a.png}}
+    \subfigure[fig-1994][Comunidades $C_0$ (vértices rosas) e $C_1$ (vértices verdes)]{\includegraphics[width=7.5cm]{img/grafos/1994a.png}\label{fig:grafos-1994-a}}
     \qquad
     \subfigure[fig-1994b][Eixo político dos partidos]{\includegraphics[width=7.5cm]{img/grafos/1994c.png}}
     
     \caption{1994: Comunidades e espectro político}
 \end{figure}
 
-Ao comparar as duas visualizações do grafo de 1994 podemos perceber que as duas comunidades geradas, C0 e C1, possuem uma divisão evidente na afinidade ideológica de seus partidos. A Tabela \ref{table-1994} apresenta algumas métricas gerais do grafo. Observando a quantidade de vértices, nota-se que a divisão de grupos foi bem balanceada, C0 e C1 contendo 12 e 11 vértices respectivamente.
+Ao comparar as duas visualizações do grafo de 1994 podemos perceber que as duas comunidades geradas, $C_0$ e $C_1$, possuem uma divisão evidente na afinidade ideológica de seus partidos. A Tabela \ref{table-1994} apresenta algumas métricas gerais do grafo. Observando a quantidade de vértices, nota-se que a divisão de grupos foi bem balanceada, $C_0$ e $C_1$ contendo 12 e 11 vértices respectivamente.
 
 \begin{table}[H]
 \centering
@@ -51,13 +51,13 @@ Ao comparar as duas visualizações do grafo de 1994 podemos perceber que as dua
 \hline
 Total de arestas  & 142 & Modularidade         & 0,230 \\ \hline
 Total de vértices & 23   & Grau Médio           & 12,348 \\ \hline
-Vértices em C0    & 12 (52,17\%)  & Grau Médio Ponderado & 33,043 \\ \hline
-Vértices em C1    & 11 (47.83\%) & Densidade            &  0,561\\ \hline
+Vértices em $C_0$    & 12 (52,17\%)  & Grau Médio Ponderado & 33,043 \\ \hline
+Vértices em $C_1$    & 11 (47.83\%) & Densidade            &  0,561\\ \hline
 \end{tabular}
 \caption{Métricas do grafo de coligações em 1994}
 \end{table}
 
-Ressalta-se que esta divisão dos vértices não significa que partidos da esquerda só fazem aliança com partidos de mesma ideologia por exemplo. As arestas dos grafos tendem a manter a cor dos vértices em que elas incidem, mas no grafo (a) podemos ver uma grande quantidade de arestas cinzas, que apresentam esta cor por conectar vértices rosas e verdes. Isto significa que existem várias alianças sendo feitas entre os partidos das duas comunidades opostas.
+Ressalta-se que esta divisão dos vértices não significa que partidos da esquerda só fazem aliança com partidos de mesma ideologia por exemplo. As arestas dos grafos tendem a manter a cor dos vértices em que elas incidem, mas na figura \ref{fig:grafos-1994-a} podemos ver uma grande quantidade de arestas cinzas, que apresentam esta cor por conectar vértices rosas e verdes. Isto significa que existem várias alianças sendo feitas entre os partidos das duas comunidades opostas.
 
 Percebe-se ainda que os partidos sem classificação ideológica (\gls{PRN} e \gls{PTRB}, vértices cinzas) ficaram nas extremidades do grafo, indicando que possuem grau menor em relação aos demais vértices e, portanto, fizeram menos alianças, assim como os vértices - \gls{PCB}, \gls{PTdoB} e \gls{PRONA} - nas extremidades da comunidade C1.
 
@@ -67,16 +67,14 @@ Percebe-se ainda que os partidos sem classificação ideológica (\gls{PRN} e \g
 
 \begin{figure}[H]
 \center
-    \subfigure[fig-1998][Comunidades C0 (vértices em laranja) e C1 (vértices verdes)]{\includegraphics[width=7.5cm]{img/grafos/1998a.png}}
+    \subfigure[fig-1998][Comunidades $C_0$ (vértices em laranja) e $C_1$ (vértices verdes)]{\includegraphics[width=7.5cm]{img/grafos/1998a.png}}
     \qquad
     \subfigure[fig-1998b][Eixo político dos partidos]{\includegraphics[width=7.5cm]{img/grafos/1998c.png}}
     
     \caption{1998: Comunidades e espectro político}
 \end{figure}
 
-\toda{Colocamos as legendas das comunidades abaixo da imagem (a) mas nao parece ficar muito bom, onde poderiamos colocar isso? No próprio texto?}
-
-Percebe-se que o grafo gerado para 1998 não é conexo, contendo dois vértices sem arestas. Isso indica que existem dois partidos que não se coligaram em nenhum estado do Brasil nesse ano (\gls{PCO} e \gls{PSTU}). Estes vértices não são considerados comunidades, mas optamos por manter no grafo para uma melhor visualização do comportamento geral de todos os partidos. Identificam-se ainda três partidos de centro-esquerda e um de esquerda - \gls{PTdoB}, \gls{PGT}, \gls{PTB} e \gls{PST} - na comunidade C0, que tem predominância de legendas de direita.
+Percebe-se que o grafo gerado para 1998 não é conexo, contendo dois vértices sem arestas. Isso indica que existem dois partidos que não se coligaram em nenhum estado do Brasil nesse ano (\gls{PCO} e \gls{PSTU}). Estes vértices não são considerados comunidades, mas optamos por manter no grafo para uma melhor visualização do comportamento geral de todos os partidos. Identificam-se ainda três partidos de centro-esquerda e um de esquerda - \gls{PTdoB}, \gls{PGT}, \gls{PTB} e \gls{PST} - na comunidade $C_0$, que tem predominância de legendas de direita.
 
 A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se neste ano, apesar de não ser tão evidente quanto em 1994. Isso se dá, em parte, ao fato de que o grafo é mais denso, como mostrado na Tabela \ref{table-1998}. 
 
@@ -89,13 +87,13 @@ A divisão dos partidos de esquerda e direita nas duas comunidades manteve-se ne
 \hline
 Total de arestas  & 295 & Modularidade         & 0,161 \\ \hline
 Total de vértices & 30  & Grau Médio           & 19,667 \\ \hline
-Vértices em C0    & 19  (63,33\%) & Grau Médio Ponderado & 50,533 \\ \hline
-Vértices em C1    & 9 (30\%) & Densidade            &  0,678\\ \hline
+Vértices em $C_0$    & 19  (63,33\%) & Grau Médio Ponderado & 50,533 \\ \hline
+Vértices em $C_1$    & 9 (30\%) & Densidade            &  0,678\\ \hline
 \end{tabular}
 \caption{Números absolutos e relativos do grafo de coligações em 1998}
 \end{table}
 
-Embora este grafo apresente apenas 2 vértices a mais do que em 1994, o número de arestas aumentou consideravelmente: 295 em 1998, mais do que o dobro de arestas em 1994, indicando um crescimento expressivo na quantidade de alianças feitas.
+Embora este grafo apresente apenas dois vértices a mais do que em 1994, o número de arestas aumentou consideravelmente: 295 em 1998, mais do que o dobro de arestas em 1994, indicando um crescimento expressivo na quantidade de alianças feitas.
 
 
 \subsection{2002}
@@ -103,16 +101,16 @@ Embora este grafo apresente apenas 2 vértices a mais do que em 1994, o número 
 
 \begin{figure}[H]
 \center
-    \subfigure[fig-2002][Comunidades C0 (vértices em rosa) e C1 (vértices verdes)]{\includegraphics[width=7.5cm]{img/grafos/2002a.png}}
+    \subfigure[fig-2002][Comunidades $C_0$ (vértices em rosa) e $C_1$ (vértices verdes)]{\includegraphics[width=7.5cm]{img/grafos/2002a.png}}
     \qquad
     \subfigure[fig-2002b][Espectro político dos partidos]{\includegraphics[width=7.5cm]{img/grafos/2002c.png}}
     
     \caption{2002: Comunidades e espectro político}
 \end{figure}
 
-Em 2002 percebe-se a existência de uma discrepância maior no tamanho das comunidades. A menor possui 6 partidos (eram 11 em 1994), fazendo com que o \emph{cluster} C0 contenha 73,33\% dos vértices do grafo, como mostra a Tabela \ref{table-2002}. Apesar do tamanho reduzido, C1 continua apresentando uma certa predominância ideológica: não contém nenhum partido de direita, sendo composta majoritariamente por legendas de esquerda.
+Em 2002 percebe-se a existência de uma discrepância maior no tamanho das comunidades. A menor possui 6 partidos (eram 11 em 1994), fazendo com que o \emph{cluster} $C_0$ contenha 73,33\% dos vértices do grafo, como mostra a Tabela \ref{table-2002}. Apesar do tamanho reduzido, $C_1$ continua apresentando uma certa predominância ideológica: não contém nenhum partido de direita, sendo composta majoritariamente por legendas de esquerda.
 
-Nota-se também que existem partidos de centro-esquerda em C0, na qual a maioria é de direita. Este agrupamento contém novamente grande parte dos partidos centristas (5 dos 7 presentes no grafo). 
+Nota-se também que existem partidos de centro-esquerda em $C_0$, na qual a maioria é de direita. Este agrupamento contém novamente grande parte dos partidos centristas (5 dos 7 presentes no grafo). 
 
 \begin{table}[H]
 \centering
@@ -121,8 +119,8 @@ Nota-se também que existem partidos de centro-esquerda em C0, na qual a maioria
 \hline
 Total de arestas  & 269 & Modularidade         & 0,101 \\ \hline
 Total de vértices & 30  & Grau Médio           & 17,933 \\ \hline
-Vértices em C0    & 22  (73,33\%) & Grau Médio Ponderado & 47,733 \\ \hline
-Vértices em C1    & 6 (20\%) & Densidade            &  0,618\\ \hline
+Vértices em $C_0$    & 22  (73,33\%) & Grau Médio Ponderado & 47,733 \\ \hline
+Vértices em $C_1$    & 6 (20\%) & Densidade            &  0,618\\ \hline
 \end{tabular}
 \caption{Números absolutos e relativos do grafo de coligações em 2002}
 \end{table}
@@ -132,14 +130,14 @@ Vértices em C1    & 6 (20\%) & Densidade            &  0,618\\ \hline
 
 \begin{figure}[H]
 \center
-    \subfigure[fig-2006][Comunidades C0 (vértices em rosa), C1 (vértices verdes) e C2 (vértices cinzas)]{\includegraphics[width=7.5cm]{img/grafos/2006a.png}}
+    \subfigure[fig-2006][Comunidades $C_0$ (vértices em rosa), $C_1$ (vértices verdes) e $C_2$ (vértices cinzas)]{\includegraphics[width=7.5cm]{img/grafos/2006a.png}}
     \qquad
     \subfigure[fig-2006b][Espectro político dos partidos]{\includegraphics[width=7.5cm]{img/grafos/2006c.png}}
     
     \caption{2006: Comunidades e espectro político}
 \end{figure}
 
-Neste ano são identificadas 3 comunidades na componente principal e o tamanho das duas comunidades maiores voltou a ser mais equilibrado. O novo \emph{cluster}, C2, está posicionado longe dos demais vértices, indicando que o número de conexões destes partidos com  os demais é pequeno. Esta comunidade contém três partidos (vide Tabela \ref{table-2006a}) de extrema-esquerda: \gls{PCB}, \gls{PSOL} e \gls{PSTU}, e sua separação dos demais vértices nos indica que estes partidos (de ideologias muito bem definidas) costumam fazer poucas ou nenhuma aliança com os demais. Entre os três, o único a se aliar com partidos das outras comunidades é o \gls{PCB}. Chamamos a atenção para o fato de que uma destas alianças é com o \gls{PSC}, partido que historicamente se opõe aos ideais comunistas, que são fortemente presentes nas pautas do partido esquerdista.
+Neste ano são identificadas três comunidades na componente principal e o tamanho das duas comunidades maiores voltou a ser mais equilibrado. O novo \emph{cluster}, $C_2$, está posicionado longe dos demais vértices, indicando que o número de conexões destes partidos com  os demais é pequeno. Esta comunidade contém três partidos (vide Tabela \eqref{table-2006a}) de extrema-esquerda: \gls{PCB}, \gls{PSOL} e \gls{PSTU}, e sua separação dos demais vértices nos indica que estes partidos (de ideologias muito bem definidas) costumam fazer poucas ou nenhuma aliança com os demais. Entre os três, o único a se aliar com partidos das outras comunidades é o \gls{PCB}. Chamamos a atenção para o fato de que uma destas alianças é com o \gls{PSC}, partido que historicamente se opõe aos ideais comunistas, que são fortemente presentes nas pautas do partido esquerdista.
 
 \begin{table}[H]
 \centering
@@ -147,14 +145,14 @@ Neste ano são identificadas 3 comunidades na componente principal e o tamanho d
 \begin{tabular}{|l|l|}
 \hline
 Comunidade & Vértices \\ \hline
-C0         &      12 (48,48\%)                \\ \hline
-C1         &     13 (39,39\%)                \\ \hline
-C2         &       3 (9,09\%)               \\ \hline
+$C_0$         &      12 (48,48\%)                \\ \hline
+$C_1$         &     13 (39,39\%)                \\ \hline
+$C_2$         &       3 (9,09\%)               \\ \hline
 \end{tabular}
 \caption{Tamanho das comunidades em 2006}
 \end{table}
 
-A distinção entre esquerda e direita torna-se menos presente neste grafo, a comunidade de C1 por exemplo, contém legendas de diversas afinidades ideológicas: \gls{PSDB}, \gls{PT}, \gls{PMDB}, \gls{PCdoB}, \gls{PP} e \gls{PL}. Entre os anos utilizado neste estudo, 2006 é o que apresenta o grafo menos denso, como mostrado na Tabela \ref{table-2006b}.
+A distinção entre esquerda e direita torna-se menos presente neste grafo, a comunidade $C_1$ por exemplo, contém legendas de diversas afinidades ideológicas: \gls{PSDB}, \gls{PT}, \gls{PMDB}, \gls{PCdoB}, \gls{PP} e \gls{PL}. Entre os anos utilizado neste estudo, 2006 é o que apresenta o grafo menos denso, como mostrado na Tabela \ref{table-2006b}.
 
 \begin{table}[H]
 \centering
@@ -173,14 +171,14 @@ Modularidade      & 0,196 & Densidade            & 0,547 \\ \hline
 
 \begin{figure}[H]
 \center
-    \subfigure[fig-2010][Comunidades C0 (roxo), C1 (marrom), C2 (vermelho), C3 (verde) e C4 (rosa)]{\includegraphics[width=7.5cm]{img/grafos/2010a.png}}
+    \subfigure[fig-2010][Comunidades $C_0$ (roxo), $C_1$ (marrom), $C_2$ (vermelho), $C_3$ (verde) e $C_4$ (rosa)]{\includegraphics[width=7.5cm]{img/grafos/2010a.png}}
     \qquad
     \subfigure[fig-2010b][Espectro político dos partidos]{\includegraphics[width=7.5cm]{img/grafos/2010c.png}}
     
     \caption{2010: Comunidades e espectro político}
 \end{figure}
 
-Em 2010 foi necessário mudar a resolução, ao utilizar 1.2 como parâmetro não foi possível separar a componente principal em 2 comunidades (ou 3, como em 2006). Isso se dá, em parte, porque o grafo gerado para este ano é muito mais denso do que nos anos anteriores, como mostrado na Tabela \ref{table-2010a}. Esta densidade é perceptível visualmente no grafo: os vértices estão muito próximos com uma quantidade grande de arestas entre eles. 
+Em 2010 foi necessário mudar a resolução, ao utilizar 1,2 como parâmetro não foi possível separar a componente principal em duas comunidades (ou três, como em 2006). Isso se dá, em parte, porque o grafo gerado para este ano é muito mais denso do que nos anos anteriores, como mostrado na Tabela \ref{table-2010a}. Esta densidade é perceptível visualmente no grafo: os vértices estão muito próximos com uma quantidade grande de arestas entre eles. 
 
 \begin{table}[H]
 \centering
@@ -198,15 +196,15 @@ Assim, ao aplicar o algoritmo de modularidade com resolução menor obteve-se um
 
 \begin{table}[H]
 \centering
-\label{table-2010b}
+\label{table-2014a}
 \begin{tabular}{|l|l|}
 \hline
 Comunidade & Vértices \\ \hline
-C0         &     9 (33,33\%)                \\ \hline
-C1         &     6 (22,22\%)                \\ \hline
-C2         &       3 (11,11\%)               \\ \hline
-C3         &       6 (22,22\%)               \\ \hline
-C4         &       2 (7,4\%)               \\ \hline
+$C_0$         &     9 (33,33\%)                \\ \hline
+$C_1$         &     6 (22,22\%)                \\ \hline
+$C_2$         &       3 (11,11\%)               \\ \hline
+$C_3$         &       6 (22,22\%)               \\ \hline
+$C_4$         &       2 (7,4\%)               \\ \hline
 \end{tabular}
 \caption{Tamanho das comunidades em 2010}
 \end{table}
@@ -226,19 +224,19 @@ O aumento de comunidades e densidade no grafo dificulta a identificação das id
     \caption{2014: Comunidades e espectro político}
 \end{figure}
 
-\toda{Este grafo vai ser corrigido, está com um erro de cor em alguns vértices}
+\todo{Este grafo vai ser corrigido, está com um erro de cor em alguns vértices}
 
-Para este grafo também foi necessário utilizar o valor 1.0 como resolução, implicando na identificação de quatro comunidades, como mostra a Tabela \ref{table-2014a}. Ele é ainda mais denso que os anteriores e apresenta o maior número de arestas até então (vide Tabela \ref{table-2014b}, o que é perceptível visualmente. Novamente uma comunidade com partidos de extrema-esquerda é formada, sendo assim o único agrupamento de vértices distantes do restante do grafo. 
+Para este grafo também foi necessário utilizar o valor 1,0 como resolução, implicando na identificação de quatro comunidades, como mostra a Tabela \ref{table-2014a}. Ele é ainda mais denso que os anteriores e apresenta o maior número de arestas até então (vide Tabela \ref{table-2014b}, o que é perceptível visualmente. Novamente uma comunidade com partidos de extrema-esquerda é formada, sendo assim o único agrupamento de vértices distantes do restante do grafo. 
 \begin{table}[H]
 \centering
-\label{table-2010b}
+\label{table-2014b}
 \begin{tabular}{|l|l|}
 \hline
 Comunidade & Vértices \\ \hline
-C0         &     13 (40,62\%)                \\ \hline
-C1         &     8 (25\%)                \\ \hline
-C2         &       3 (9,37\%)               \\ \hline
-C3         &       7 (21,87\%)               \\ \hline
+$C_0$         &     13 (40,62\%)                \\ \hline
+$C_1$         &     8 (25\%)                \\ \hline
+$C_2$         &       3 (9,37\%)               \\ \hline
+$C_3$         &       7 (21,87\%)               \\ \hline
 \end{tabular}
 \caption{Tamanho das comunidades em 2014}
 \end{table}
@@ -277,7 +275,7 @@ A Figura \ref{fig:grafico-graumedioponderado} apresenta o grau médio ponderado 
 
 Em 2010 este número voltou a aumentar, e atingiu seu maior valor até então em 2014. Neste ano cada partido fez, em média, quase 70 alianças em todo o Brasil. 
 
-Como o número de partidos (Figura \ref{fig:grafico-verticesarestas} quase não mudou ao longo dos anos, o crescimento no valor do grau médio indica que a quantidade de alianças feitas entre as diferentes legendas tem aumentado, e consequentemente a afinidade ideológica é um fator cada vez menos influente nas coligações.
+Como o número de partidos (Figura \ref{fig:grafico-verticesarestas}) quase não mudou ao longo dos anos, o crescimento no valor do grau médio indica que a quantidade de alianças feitas entre as diferentes legendas tem aumentado, e consequentemente a afinidade ideológica é um fator cada vez menos influente nas coligações.
 
 \begin{figure}[H]
 \includegraphics[width=1\textwidth]{4-resultados/graficos/vertices-arestas.png}

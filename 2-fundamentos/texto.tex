@@ -6,52 +6,51 @@
 \section{\texorpdfstring{\MakeUppercase{Grafo}}{}}
 \label{conceitos__grafo}
 
-Um \emph{grafo} G é um par ordenado (V[G], E[G]) sendo V[G] um conjunto de \emph{vértices} e E[G] um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de G através de uma \emph{função de incidência} $\psi_{G}$. Seja \emph{e} uma aresta e \emph{u} e \emph{v} vértices em G, tais que $\psi_{G}$(\emph{e}) = \{\emph{u}, \emph{v}\}, assim, pode-se dizer que \emph{e} é uma aresta que \emph{incide} sobre \emph{u} e \emph{v} e que \emph{u} e \emph{v} são as \emph{extremidades} de \emph{e}. Além disso, é dito que \emph{u} e \emph{v} são vizinhos entre si.~\cite{bondy1976graph}.
+Um \emph{grafo} $G$ é um par ordenado $(V[G], E[G])$ sendo $V[G]$ um conjunto de \emph{vértices} e $E[G]$ um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de $G$ através de uma \emph{função de incidência} $\psi_{G}$. Seja $e$ uma aresta e $u$ e $v$ vértices em $G$, tais que $\psi_{G}(e) = \{u, v\}$, assim, pode-se dizer que $e$ é uma aresta que \emph{incide} sobre $u$ e $v$ e que $u$ e $v$ são as \emph{extremidades} de $e$. Além disso, é dito que $u$ e $v$ são \emph{vizinhos} entre si.~\cite{bondy1976graph}.
 
-O número de vértices e arestas em G são denotados por |V[G]| e |E[G]|; estes
-dois parâmetros básicos são chamados de \emph{ordem} e \emph{tamanho} de G, respectivamente.
-
-\noindent\emph{Exemplo}.
+O número de vértices e arestas em $G$ são denotados por $|V[G]|$ e $|E[G]|
+$ e são chamados de \emph{ordem} e \emph{tamanho} de $G$, respectivamente. Por exemplo,
 
 \makebox[\textwidth]{
-    G$_{1}$ = (V[G$_{1}$], E[G$_{1}$])
+    $G_{1} = (V[G_{1}], E[G_{1}])$
 }
 
 \noindent onde
 
 \makebox[\textwidth]{
-    V(G$_{1}$) = \{u, v, w\}
+    $V(G_{1}) = \{u, v, w\}$
 }
 
 \makebox[\textwidth]{
-    E(G$_{1}$) = \{e$_{0}$, e$_{1}$\}
+    $E(G_{1}) = \{e_{0}, e_{1}\}$
 }
 
 \noindent e $\psi_{G_{1}}$ definida por
 
 \makebox[\textwidth]{
-    $\psi_{G_{1}}$(\emph{e$_{0}$}) = \{\emph{u}, \emph{v}\}
+    $\psi_{G_{1}}(e_{0}) = \{u, v\}$
 }
 
 \makebox[\textwidth]{
-    $\psi_{G_{1}}$(\emph{e$_{1}$}) = \{\emph{v}, \emph{w}\}
+    $\psi_{G_{1}}(e_{1}) = \{v, w\}$
 }
 
-Visualmente, este grafo pode ser representado da seguinte forma:
+Visualmente, este grafo pode ser representado da seguinte forma:.
 
-\begin{figure}[H]
-\includegraphics[scale=0.4]{grafo-simples}
+\begin{figure}[h]
+\includegraphics[scale=0.5]{grafo-simples}
 \centering
-\caption{Representação gráfica de G$_{1}$.}
+\caption{Representação gráfica de $G_{1}$.}
+\label{fig:grafo-simples}
 \end{figure}
 
 %%%%%
 \subsection{Grafo Completo}
 \label{conceitos__grafo--comleto}
 
-Um \emph{grafo completo} G é um grafo onde cada par de vértices é conectado por uma aresta, ou seja, $|E[G]| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo pode ter, onde \emph{n} = |V[G]|.
+Um \emph{grafo completo} $G$ é um grafo onde cada par de vértices é conectado por uma aresta, ou seja, $|E[G]| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo pode ter, onde $n = |V[G]|$.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \includegraphics[scale=0.5]{grafo-completo}
 \centering
 \caption{Representação gráfica de um grafo completo com seis vértices.}
@@ -61,13 +60,13 @@ Um \emph{grafo completo} G é um grafo onde cada par de vértices é conectado p
 \subsection{Densidade}
 \label{conceitos__grafo--densidade}
 
-A \emph{densidade} de um grafo G é a razão entre a quantidade de arestas G e a quantidade de arestas em um grafo completo com o mesmo número de vértices. Caso a densidade de G seja alta, é dito que G é um grafo \emph{denso} e, caso contrário, ele é considerado um grafo \emph{esparso}.
+A \emph{densidade} de um grafo $G$ é a razão entre a quantidade de arestas $G$ e a quantidade de arestas em um grafo completo com o mesmo número de vértices. De modo informal, caso a densidade de $G$ seja alta, é dito que $G$ é um grafo \emph{denso} e, caso contrário, ele é considerado um grafo \emph{esparso}.
 
 %%%%%
 \subsection{Clique}
 \label{conceitos__grafo--clique}
 
-Uma \emph{clique} C em um grafo G é um subconjunto de vértices tais que cada par de vértices do subconjunto é conectado por uma aresta. Isso significa dizer C que é um \emph{subgrafo} de G, $C \subseteq G$, e que C é completo, ou seja, $|E[C]| = \frac{n_{c}(n_{c}-1)}{2}$, onde $n_{c}$ = |V[C]|.
+Uma \emph{clique} $C$ em um grafo $G$ é um subconjunto de vértices tais que cada par de vértices do subconjunto é conectado por uma aresta. Isso significa dizer $C$ que é um \emph{subgrafo} de $G$, $C \subseteq G$, e que $C$ é completo, ou seja, $|E[C]| = \frac{n_{c}(n_{c}-1)}{2}$, onde $n_{c} = |V[C]|$.
 
 % \begin{figure}[H]
 % \includegraphics[scale=0.4]{grafo-clique}
@@ -81,7 +80,7 @@ Uma \emph{clique} C em um grafo G é um subconjunto de vértices tais que cada p
 
 Grafos são muito utilizados para modelar problemas reais e, em certos problemas, é preciso incluir alguns atributos especiais, como por exemplo um custo, que está associado com as arestas. Em uma rede de tráfego, por exemplo, esse custo poderia representar a distância entre dois lugares. Esses problemas costumam ser modelados por um grafo ponderado.
 
-Para cada aresta \emph{e} de um grafo G, é associado um número real \emph{w}(\emph{e}), denominado \emph{peso}. Sendo assim, G, com o atributo peso associado as arestas, é chamado de \emph{grafo ponderado}.
+Para cada aresta $e$ de um grafo $G$, é associado um número real $w(e)$, denominado \emph{peso}. Sendo assim, $G$, com o atributo peso associado as arestas, é chamado de \emph{grafo ponderado}.
 
 %%%%%
 \subsection{Grau de um vértice}
@@ -89,9 +88,9 @@ Para cada aresta \emph{e} de um grafo G, é associado um número real \emph{w}(\
 
 \def \variable {\emph{v}}
 
-O \emph{grau} de um vértice \emph{v} em um grafo G, denotado por \emph{d$_{G}$}(\emph{v}), é o número de arestas em G que incidem sobre \emph{v}. De modo particular, \emph{d$_{G}$}(\emph{v}) é o número de vizinhos de \emph{v} em G. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que \emph{d}(G) denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde \emph{n} é o número de vértices de G~\cite{bondy1976graph}.
+O \emph{grau} de um vértice $v$ em um grafo $G$, denotado por $d_{G}(v)$, é o número de arestas em $G$ que incidem sobre $v$. De modo particular, $d_{G}(v)$ é o número de vizinhos de $v$ em $G$. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que $d(G)$ denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde $n$ é o número de vértices de G~\cite{bondy1976graph}.
 
-Em um grafo ponderado, o grau de um vértice \emph{v} é dado pela soma dos pesos das arestas que incidem sobre \emph{v}.
+Em um grafo ponderado, o grau de um vértice $v$ é dado pela soma dos pesos das arestas que incidem sobre $v$.
 
 %%%%%
 \subsection{Componente}
@@ -183,7 +182,7 @@ Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacio
 \section{\texorpdfstring{\MakeUppercase{Homofilia}}{}}
 \label{conceitos__homofilia}
 
-Um dos princípios mais básicos em redes sociais é o de \emph{Homofilia}. Este princípio diz que as pessoas tendem a ser semelhantes aos seus amigos. Ao observar grupos de amigos, é comum ver que as pessoas de cada grupo compartilham várias características, como por exemplo etnia, idade, interesses, crenças, etc. Claro que as redes sociais não se limitam a este comportamento somente, podendo existir conexões entre pessoas com características diferentes, mas de maneira generalizada, as conexões são formadas entre semelhantes~\cite{easley2010networks}.
+Um dos princípios mais básicos em redes sociais é o de \emph{homofilia}. Este princípio diz que as pessoas tendem a ser semelhantes aos seus amigos. Ao observar grupos de amigos, é comum ver que as pessoas de cada grupo compartilham várias características, como por exemplo etnia, idade, interesses, crenças, etc. Claro que as redes sociais não se limitam a este comportamento somente, podendo existir conexões entre pessoas com características diferentes, mas de maneira generalizada, as conexões são formadas entre semelhantes~\cite{easley2010networks}.
 
 \begin{figure}[H]
 \includegraphics[scale=0.6]{grafo-homofilia}
@@ -198,7 +197,7 @@ Um dos princípios mais básicos em redes sociais é o de \emph{Homofilia}. Este
 \section{\texorpdfstring{\MakeUppercase{Modularidade e Comunidades}}{}}
 \label{conceitos__modularidade}
 
-Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc. 
+Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas informalmente como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc. 
 
 \emph{Modularidade} é a medida que busca a divisão de um grafo em comunidades. Quanto maior a modularidade de um grafo, maior a densidade nas conexões entre vértices de uma mesma comunidade.
 
@@ -207,33 +206,33 @@ Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Sistema Eleitoral Brasileiro}}{}}
 
-A Constituição Federal, através do Código Eleitoral, define o sistema eleitoral brasileiro como um sistema misto, com eleições \emph{majoritárias} para os cargos executivos, - Prefeitura, Senado e Presidência - e \emph{proporcionais} para os cargos legislativos - Câmara dos Deputados, Assembleias Legislativas e Câmaras Municipais - onde podem concorrer às eleições somente candidatos registrados por partidos políticos.~\cite{brasil1965lei4737}. Além disso, o sistema eleitoral brasileiro é regulado pelo \gls{TSE}.
+A Constituição Federal, através do Código Eleitoral, define o sistema eleitoral brasileiro como um sistema misto, com eleições \emph{majoritárias} para os cargos executivos, - Prefeitura, Senado e Presidência - e \emph{proporcionais} para os cargos legislativos - Câmara dos Deputados, Assembleias Legislativas e Câmaras Municipais - onde podem concorrer às eleições somente candidatos registrados por partidos políticos~\cite{brasil1965lei4737}. Além disso, o sistema eleitoral brasileiro é regulado pelo \gls{TSE}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring{\MakeUppercase{Partidos Políticos no Brasil}}{}}
 \label{conceitos__partidos-brasil}
     
-Segundo a  Lei nº 9.096, de 1995, que dispõe sobre partidos políticos, o \emph{partido político}, no interesse do regime democrático, destina-se a assegurar a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal~\cite{brasil1995lei9096}. Ou, segundo Vera Maria Nunes Michels:
+Segundo a  Lei nº 9.096~\cite{brasil1995lei9096}, que dispõe sobre partidos políticos, o \emph{partido político}, no interesse do regime democrático, destina-se a assegurar a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal. Ou segundo ~\cite{michels2006direito}:
 
 \begin{quotation}
-    \emph{Podemos entender, assim, que o partido político, como pessoa jurídica de direito privado, é um grupo social de relevante amplitude, destinado à arregimentação coletiva, em torno de ideias e de interesses, para levar seus membros a compartilhar do poder decisório nas instâncias governamentais}~\cite{michels2006direito}.
+    \emph{‘‘Podemos entender, assim, que o partido político, como pessoa jurídica de direito privado, é um grupo social de relevante amplitude, destinado à arregimentação coletiva, em torno de ideias e de interesses, para levar seus membros a compartilhar do poder decisório nas instâncias governamentais’’}.
 \end{quotation}
 
 De modo geral, é possível definir um partido político como um grupo de pessoas com ideias em comum sobre pautas políticas e sociais com o objetivo de formar planos governamentais de acordo com estas ideias~\cite{garibaldi2017partidos}.
 
-Por questões de praticidade, neste trabalho, os partidos políticos serão denotados apenas por \emph{partidos}. 
+Por questões de praticidade, neste trabalho, os partidos políticos serão referenciados apenas por \emph{partidos}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{\texorpdfstring{\MakeUppercase{Coligações Partidárias}}{}}
 \label{conceitos__coligacoes}
 
-É comum que diferentes partidos políticos compartilhem ideias, ideais e/ou interesses, de modo que formam alianças entre si. Estas alianças são permitidas e regulamentadas na maioria das democracias e no Brasil não é diferente, sendo então chamadas de \emph{Coligações Partidárias} ou simplesmente \emph{Coligações}.
+É comum que diferentes partidos políticos compartilhem ideias, ideais e/ou interesses, de modo que formem alianças entre si. Estas alianças são permitidas e regulamentadas na maioria das democracias e no Brasil não é diferente, sendo então chamadas de \emph{coligações partidárias} ou simplesmente \emph{coligações}.
 
-No Brasil, as Coligações são formadas, de maneira formal, durante o período de campanha eleitoral e seguem algumas regras~\cite{brasil1997lei9504}, sendo as mais importantes, para o contexto deste trabalho, as listadas abaixo:
+No Brasil, as coligações são formadas, de maneira formal, durante o período de campanha eleitoral e seguem algumas regras~\cite{brasil1997lei9504}, sendo as mais importantes, para o contexto deste trabalho, as listadas abaixo:
 
 \begin{itemize}
-    \item Um partido pode fazer parte de coligações somente em eleições majoritárias, somente em eleições proporcionais ou em ambas; e
+    \item Um partido pode fazer parte de coligações somente em eleições majoritárias, somente em eleições proporcionais ou em ambas.
     \item Caso o partido esteja em coligações em ambas as eleições - majoritárias e proporcionais - este partido partido não pode fazer coligação, em eleições proporcionais, com partidos pertencentes a coligações concorrentes nas eleições majoritárias. Sendo esta regra válida por região eleitoral (municipal, estadual ou nacional).
 \end{itemize}
 
@@ -250,16 +249,16 @@ Nas seções anteriores, vimos que partidos e coligações se reúnem, em teoria
 
 No modelo mais básico de espectro político, que será utilizado neste trabalho, as posições políticas costumam ser rotuladas como de \emph{extrema esquerda}, \emph{esquerda}, \emph{centro-esquerda}, \emph{centro}, \emph{centro-direita}, \emph{direita} e \emph{extrema direita} e colocadas ao longo de um eixo. Este modelo surge no parlamento francês no século XVIII onde, para fazer a distinção de ideais políticos, os parlamentares sentavam-se à esquerda ou à direita no plenário, conforme o seu alinhamento com certas correntes políticas.
 
-\begin{figure}[H]
-\includegraphics[width=1\textwidth]{eixo-esquerda-direita}
-\centering
-\caption{
-    Representação do espectro político Esquerda-Direita sobre um eixo. Fonte:~\cite{matos2016esquerdadireita}.
-}
-\label{fig:eixo-esquerda-direita}
-\end{figure}
+% \begin{figure}[H]
+% \includegraphics[width=1\textwidth]{eixo-esquerda-direita}
+% \centering
+% \caption{
+%     Representação do espectro político Esquerda-Direita sobre um eixo. Fonte:~\cite{matos2016esquerdadireita}.
+% }
+% \label{fig:eixo-esquerda-direita}
+% \end{figure}
 
-\todo{precisa falar aqui que a gente não precisa entrar em detalhes que explicam exatamente o que é direita x esquerda, ou precisa falar sobre isso de maneira mais específica?}
+Está fora do escopo deste trabalho explicar tais classificações do espectro político, mas há diversas fontes [\todo{colocar referencias}] onde o leitor interessado pode buscar.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -268,7 +267,7 @@ No modelo mais básico de espectro político, que será utilizado neste trabalho
 
 Para a representação visual dos grafos foi utilizada a plataforma \emph{Gephi}\footnote{\url{https://gephi.org/}}, um software com licença de código aberto amplamente utilizado para esta finalidade, onde basta importar um arquivo em formato específico para gerar uma visualização do grafo correspondente. Além disso, o \emph{Gephi} fornece vários \emph{plugins} que podem ser utilizados para executar algoritmos sobre o grafo desejado. Estes \emph{plugins} foram utilizados para calcular várias das métricas apresentadas neste trabalho, como \emph{modularidade}, \emph{grau médio} e \emph{densidade}, facilitando consideravelmente a análise.
 
-O \emph{Gephi} também disponibiliza várias formas de visualização de um grafo e dentre estas foram utilizadas duas, \emph{Force Atlas 2} e \emph{Fruchterman-Reingold}, as quais serão explicadas superficialmente, pois no contexto deste trabalho não convém entrar em detalhes de implementação.
+O \emph{Gephi} também disponibiliza várias formas de visualização de um grafo e dentre estas foram utilizadas duas, \emph{Force Atlas 2} e \emph{Fruchterman-Reingold}, as quais serão explicadas superficialmente.
 
 As figuras \ref{fig:grafo-force-atlas} e \ref{fig:grafo-fruchterman-reingold} mostram estas visualizações a partir de um grafo que representa colaborações entre músicos de jazz, onde cada músico é representado por um vértice e, se dois músicos fizeram parte de uma mesma banda, não necessariamente ao mesmo tempo, uma aresta se forma sobre os vértices que os representam~\cite{gleiser2003list}.
 
@@ -290,7 +289,7 @@ O algoritmo de visualização Force Atlas 2~\cite{jacomy2014forceatlas2} é base
 \subsection{Fruchterman-Reingold}
 \label{conceitos__visualizacoes--fruchterman-reingold}
 
-O Algoritmo de visualização \emph{Fruchterman-Reingold}~\cite{fruchterman1991graph} também é baseado em força, porém sem levar em consideração o peso das arestas. Esta visualização segue dois princípios básicos:
+O algoritmo de visualização \emph{Fruchterman-Reingold}~\cite{fruchterman1991graph} também é baseado em força, porém sem levar em consideração o peso das arestas. Esta visualização segue dois princípios básicos:
 
 \begin{enumerate}
 \item Vértices conectados por uma aresta devem ficar próximos;
@@ -307,5 +306,3 @@ Sendo assim, o algoritmo distribui os vértices uniformemente, tornando também 
 }
 \label{fig:grafo-fruchterman-reingold}
 \end{figure}
-
-\todo{Faz sentido visualizações estar dentro de conceitos e definições? Parece um pouco esquisito, de repente poderia estar em um novo capítulo}
