@@ -12,6 +12,7 @@ set datafile missing '-'
 set style data histograms
 set xtics  norangelimit  font ",8"
 set xtics   ()
+set tics font "Helvetica,14"
 
 #set style histogram rowstacked title offset 0,-1
 #set style fill solid
@@ -26,7 +27,7 @@ set style fill solid border -1
 set boxwidth 0.8 relative
 #set key outside center bottom
 
-unset key
+#unset key
 plot newhistogram "1994", '1994.dat'  using 2:xticlabels(1) title 'Extrema-esquerda' lt rgb "#FF0000", '1994.dat' using 3 t 'Esquerda' lt rgb "#FF4D46", '1994.dat' using 4 title 'Centro-esquerda' lt rgb "#FFA38A",  '1994.dat' using 5 t 'Centro' lt rgb "#3CCF61", '1994.dat' using 6:xticlabels(1) title '' lt rgb "#9EACFF", '1994.dat' using 7 t '' lt rgb "#5353DB",  '1994.dat' using 8 t '' lt rgb "#7a7a7a", \
 newhistogram "1998", '1998.dat'  using 2:xticlabels(1) title ''  lt rgb "#FF0000", '1998.dat' using 3 t '' lt rgb "#FF4D46", '1998.dat' using 4 title '' lt rgb "#FFA38A",  '1998.dat' using 5 t '' lt rgb "#3CCF61", '1998.dat' using 6:xticlabels(1) title 'Centro-direita' lt rgb "#9EACFF", '1998.dat' using 7 t 'Direita' lt rgb "#5353DB",  '1998.dat' using 8 t 'Não definido' lt rgb "#7a7a7a", \
 newhistogram "2002", '2002.dat'  using 2:xticlabels(1) title ''  lt rgb "#FF0000", '2002.dat' using 3 t '' lt rgb "#FF4D46", '2002.dat' using 4 title '' lt rgb "#FFA38A",  '2002.dat' using 5 t '' lt rgb "#3CCF61", '2002.dat' using 6:xticlabels(1) title '' lt rgb "#9EACFF", '2002.dat' using 7 t '' lt rgb "#5353DB",  '2002.dat' using 8 t '' lt rgb "#7a7a7a", \
