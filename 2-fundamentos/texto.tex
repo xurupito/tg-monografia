@@ -118,12 +118,10 @@ Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são su
 \subsection{Componente gigante}
 \label{conceitos__grafo--componente-gigante}
 
-\emph{Componente gigante}~\cite{easley2010networks} é um termo informal utilizado para 
-um componente conexo que contém uma fração significativa de todos os vértices de um grafo. Além disso, quando um grafo contém um componente gigante, quase sempre este componente é único.
+\emph{Componente gigante}~\cite{easley2010networks} é um termo informal utilizado para
+um componente conexo que contém uma fração significativa de todos os vértices de um grafo.
 
-Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacionamentos românticos em uma escola secundária americana. É possível identificar uma componente gigante, onde até estudantes com apenas uma relação estão incluídos nela. Também é fácil perceber que, basta que uma pessoa de uma das componentes menores ter um relacionamento com alguém da componente gigante, que todos os vértices desta componente passarão a fazer parte da componente gigante. 
-
-É por este motivo que, quase sempre, uma componente gigante é única em uma rede, pois basta uma aresta de uma componente a outra para que elas se unam, formando uma nova componente única.
+Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacionamentos românticos em uma escola secundária americana. É possível identificar uma componente gigante, onde até estudantes com apenas uma relação estão incluídos nela. Também é fácil perceber que, basta que uma pessoa de uma das componentes menores ter um relacionamento com alguém da componente gigante, que todos os vértices desta componente passarão a fazer parte da componente gigante.
 
 \begin{figure}[H]
 \includegraphics[scale=0.6]{grafo-componente-gigante}
@@ -151,39 +149,39 @@ Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacio
 % \end{quotation}
 
 % A figura \ref{fig:grafo-fechamento-triadico} ilustra exemplos de fechamentos triádicos. Os vértices \emph{A} e \emph{E} tem o vértice \emph{B} em comum, então a formação de uma nova aresta \emph{A}-\emph{E} produz uma situação onde os três vértices estão conectados. Essa estrutura de três vértices é chamada de \emph{triângulo}. O termo \emph{fechamento triádico} vem do fato de que a aresta \emph{A}-\emph{E} teve o efeito de ‘‘fechar’’ o terceiro lado deste triângulo. Neste exemplo, o mesmo comportamento ocorre com as arestas \emph{B}-\emph{F} e \emph{D}-\emph{G}.
-% 
+%
 % Ao observar grandes redes sociais por um período de tempo, é comum identificar esse tipo de comportamento de fechamento triádico.
-% 
+%
 % \begin{figure}[H]
 %     \center
 %     \subfigure[fig:fechamento-triadico-antes][Antes de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-antes}}
 %     \qquad
 %     \subfigure[fig:fechamento-triadico-depois][depois de formar novas arestas]{\includegraphics[width=6cm]{fechamento-triadico-depois}}
-%      
+%
 %     \caption{Ao observar uma rede por um período de tempo, é possível ver que novas arestas são formadas, muitas vezes seguindo o princípio do fechamento triádico.}
 %     \label{fig:grafo-fechamento-triadico}
 % \end{figure}
-% 
+%
 % %%%%%
 % \subsection{Coeficiente de clustering}
 % \label{conceitos__fechamento-triadico--coeficiente-clustering}
-% 
+%
 % A regra do fechamento triádico motiva a definição de algumas métricas. Uma delas é o coeficiente de \emph{clustering}.
-% 
+%
 % O \emph{coeficiente de clustering} de um vértice \emph{v} é a probabilidade de que dois de seus vizinhos, selecionados aleatoriamente, sejam conectados por uma aresta.
-% 
+%
 % Na figura \ref{fig:grafo-fechamento-triadico}, por exemplo, o vértice \emph{E} possui coeficiente de \emph{clustering} $\frac{1}{6}$ antes da formação de novas arestas, pois, como \emph{E} tem quatro vizinhos, o número máximo de arestas que poderiam ser formadas entre eles é seis, mas só existe uma. Após a formação de novas arestas, \emph{E} passa a ter um coeficiente de \emph{clustering} de $\frac{4}{10}$.
-% 
+%
 % O \emph{coeficiente de clustering médio} de um grafo é dado por $\bar{C = \frac{1}{n}\sum_{v\in V}(C_v)$, onde $C_v$ é o coeficiente de \emph{clustering} do vértice \emph{v}.
-% 
+%
 % \todo{Será que precisa colocar algo sobre coeficiente de clustering em grafo ponderado? Pq e é diferente e como os nossos grafos são ponderados... Mas não tem mto material por aí}
-% 
+%
 % \todo{ver depois:}
-% 
+%
 % \url{https://arxiv.org/pdf/cond-mat/0311416.pdf}
-% 
+%
 % \url{https://toreopsahl.com/tnet/weighted-networks/clustering/}
-% 
+%
 % \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.139.9018&rep=rep1&type=pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -205,7 +203,7 @@ Um dos princípios mais básicos em redes sociais é o de \emph{homofilia}. Este
 \section{Modularidade e comunidades}
 \label{conceitos__modularidade}
 
-Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas informalmente como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc. 
+Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{comunidades} (ou \emph{clusters}), que podem ser definidas informalmente como subconjuntos de vértices que podem ser facilmente agrupados, pois são densamente conectados internamente, porém esparsamente conectados com o restante do grafo. Assim, é interessante identificar estas comunidades para analisá-las separadamente, pois podem ter diferentes propriedades, tais como grau dos vértices, coeficiente de \emph{clustering}, centralidade, etc.
 
 \emph{Modularidade} é a medida que busca a divisão de um grafo em comunidades. Quanto maior a modularidade de um grafo, maior a densidade nas conexões entre vértices de uma mesma comunidade.
 
@@ -217,7 +215,7 @@ A Constituição Federal, através do Código Eleitoral, define o sistema eleito
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Partidos políticos no Brasil}
 \label{conceitos__partidos-brasil}
-    
+
 Segundo a  Lei nº 9.096~\cite{brasil1995lei9096}, que dispõe sobre partidos políticos, o \emph{partido político}, no interesse do regime democrático, destina-se a assegurar a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal. Ou segundo ~\cite{michels2006direito}:
 
 \begin{quotation}
@@ -226,7 +224,7 @@ Segundo a  Lei nº 9.096~\cite{brasil1995lei9096}, que dispõe sobre partidos po
 
 De modo geral, é possível definir um partido político como um grupo de pessoas com ideias em comum sobre pautas políticas e sociais com o objetivo de formar planos governamentais de acordo com estas ideias~\cite{garibaldi2017partidos}.
 
-Por questões de praticidade, neste trabalho, os partidos políticos serão referenciados apenas por \emph{partidos} ou \emph{legendas}. 
+Por questões de praticidade, neste trabalho, os partidos políticos serão referenciados apenas por \emph{partidos} ou \emph{legendas}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
