@@ -8,13 +8,13 @@
 
 O site do \gls{TSE} fornece um repositório de dados eleitorais\footnote{\url{http://www.tse.jus.br/eleitor-e-eleicoes/estatisticas/repositorio-de-dados-eleitorais-1}} que contém um compilado de informações brutas das eleições no Brasil, sendo assim um meio para pesquisadores, imprensa e pessoas interessadas analisarem dados de candidatura, eleitorado, resultados e prestação de contas. Estes dados são fornecidos em arquivos no formato \emph{.csv}, de forma que consultas, filtros e cruzamento de dados são de responsabilidade do pesquisador.
 
-Além dos arquivos, o site do \gls{TSE} fornece uma documentação que visa explicar como os dados estão dispostos em cada tipo de arquivo. Após estudo da documentação fornecida, elaboramos um modelo relacional dos dados para possibilitar um melhor entendimento do conteúdo disponível e decidir quais informações seriam interessantes para análise. Nesta etapa percebeu-se que existiam arquivos com dados incompletos e formatações diferentes na disposição de seus conteúdos, gerando assim uma redução de dados que poderiam ser analisados forma satisfatória. 
+Além dos arquivos, o site do \gls{TSE} fornece uma documentação que visa explicar como os dados estão dispostos em cada tipo de arquivo. Após estudo da documentação fornecida, elaboramos um modelo relacional dos dados para possibilitar um melhor entendimento do conteúdo disponível e decidir quais informações seriam interessantes para análise. Nesta etapa percebeu-se que existiam arquivos com dados incompletos e formatações diferentes na disposição de seus conteúdos, implicando em uma redução de dados que poderiam ser analisados de forma satisfatória.  Para o cargo de presidente por exemplo, não haviam informações sobre coligações partidárias em alguns anos de eleição e ao analisar eleições estaduais, percebeu-se que não existiam arquivos de dados para diversos estados em anos diferentes.
 
-Esta inconsistência encontrada em alguns dados nos levou a desistir de uma ideia inicial, na qual pretendia-se analisar as coligações para eleições presidenciais. Dessa forma, optou-se por focar o estudo nas coligações formadas para disputa ao cargo de deputado estadual. 
+Esta inconsistência encontrada em alguns dados nos levou a desistir de uma ideia inicial (pretendia-se analisar as coligações para eleições presidenciais), uma vez que não seria interessante trabalharmos sobre dados incompletos. Assim, optou-se por focar o estudo nas coligações formadas para disputa ao cargo de deputado estadual. 
 
-Dentre os arquivos estudados, avaliou-se que os dados referentes aos candidatos eram os mais completos, apresentando inclusive informações sobre partidos e coligações. Dessa forma, optamos por observar o relacionamento entre os partidos políticos ao longo dos anos de eleição. 
+Dentre os arquivos estudados, avaliou-se que os dados referentes aos candidatos eram os mais consistentes, apresentando inclusive informações sobre partidos e coligações. Dessa forma, optamos por observar o relacionamento entre os partidos políticos ao longo dos anos de eleição. 
 
-A próxima etapa foi realizar o tratamento destes dados brutos, afim de extrair somente os dados que eram do interesse deste trabalho. Para isso, foi escrito um programa em linguagem \emph{Javascript}, que recebe como entrada os arquivos de dados, um arquivo com o esquema dos dados, ou seja, a informação de quais são os campos do tipo de arquivo que está sendo lido e o cargo político de interesse para a análise.
+A próxima etapa foi realizar o tratamento destes dados brutos, afim de extrair somente aquilo que fosse de interesse deste trabalho. Para isso foi escrito um programa em linguagem \emph{Javascript}, que recebe como entrada os arquivos de dados, um arquivo com o esquema dos dados, ou seja, a informação de quais são os campos do tipo de arquivo que está sendo lido e o cargo político de interesse para a análise.
 
 Este programa então lê e converte os arquivos de dados para o formato \emph{JSON}\footnote{\emph{Javascript Object Notation}: formato de padrão aberto utilizado para transmitir objetos de dados consistindo de pares chave-valor.}, que é o formato utilizado em \emph{Javascript} para representar objetos em memória em tempo de execução. Este formato e as facilidades da linguagem permitem que seja realizado um filtro dos dados, de maneira rápida e prática. Após a filtragem dos dados, trabalhamos em moldá-los em uma estrutura de grafos, ainda no formato \emph{JSON}. Por fim, são gerados os arquivos de saída em formato \emph{.gexf}\footnote{Formato padrão do \emph{Gephi}, muito similar ao formato \emph{.xml}, mas com algumas particularidades. Especificação do formato \emph{.gexf} disponível em: \url{https://gephi.org/gexf/format}.}. São gerados vários arquivos de saída, sendo um para cada ano de eleição. Este programa está disponível, de maneira aberta e gratuita, em \url{https://github.com/xurupito/tg-parser}.
 
@@ -25,7 +25,7 @@ Este programa então lê e converte os arquivos de dados para o formato \emph{JS
 Após a obtenção dos dados formatados da maneira desejada, foi definido que seriam analisadas coligações partidárias estaduais em âmbito nacional, para o cargo de deputado. Duas possíveis abordagens para a modelagem em grafos surgiram:
 \begin{enumerate}
     \item Gerar um grafo por estado. Cada partido político seria um vértice e os partidos que participassem de uma mesma coligação seriam conectados por uma aresta.
-    \item Gerar um grafo ponderado por ano. Cada vértice seria um partido e as arestas conectariam partidos de mesmas coligações. Assim, em cada grafo seria possível visualizar como são as alianças partidárias em todo o país.
+    \item Gerar um grafo ponderado por ano. Cada vértice seria um partido e as arestas conectariam partidos de mesmas coligações. O peso das arestas indicaria em quantos estados aquela aliança ocorreu. Assim, em cada grafo seria possível visualizar como são as alianças partidárias em todo o país.
 \end{enumerate}
 
 Avaliou-se exemplos de grafos dentro do cenário 1, e percebeu-se que em cada estado o grafo correspondente apresentava diversas cliques - cada uma sendo uma coligação - como pode ser visto na Figura \ref{grafo-parana-1998}.
@@ -49,7 +49,7 @@ Para exemplificar um dos motivos que nos levou a optar pelo uso de grafos ponder
 
 A divisão ideológica dos partidos no Brasil não é trivial, no atual sistema político existem siglas com programas vagos e ideologias pouco claras, o que dificulta sua categorização dentro do espectro político. Com isso tornou-se inviável a categorização de alguns partidos presentes nos grafos apresentados neste trabalho.
 
-Não é difícil perceber que existe falta de consenso dentro do cenário político como um todo em relação a como partidos se posicionam ou se encaixam no espectro político brasileiro, e essa categorização é inclusive foco de estudo de historiadores e sociólogos. Dessa forma, para a classificação dos partidos em \emph{esquerda}, \emph{direita}, \emph{centro} e as demais divisões ideológicas, optamos por categorizar de acordo com a classificação publicada pela BBC em seu site~\cite{shalders2017direiraesquerda}, uma pesquisa feita pelo jornal O Globo~\cite{vasconcellos2016posicionamentopartidos} e denominações feitas pelos partidos encontradas na literatura  \cite{}. \todo {ainda falta conferir algumas referencias que utilizamos}
+Não é difícil perceber que existe falta de consenso dentro do cenário político como um todo em relação a como partidos se posicionam ou se encaixam no espectro político brasileiro, e essa categorização é inclusive foco de estudo de historiadores e sociólogos. Dessa forma, para a classificação dos partidos em \emph{esquerda}, \emph{direita}, \emph{centro} e as demais divisões ideológicas, optamos por categorizar de acordo com a classificação publicada pela BBC em seu site~\cite{shalders2017direiraesquerda}, uma pesquisa feita pelo jornal O Globo~\cite{vasconcellos2016posicionamentopartidos} e denominações feitas pelos partidos encontradas na literatura~\cite{diap2014eleicoes2014}~\cite{rocha2014comosurgiramospartidos}~\cite{senraguimaraes2016desitradacaopartidosesquerda}.
 
 Por fim, entendemos que foge da proposta deste trabalho discorrer sobre questões socio-políticas a respeito dos dados apresentados, uma vez que estas questões podem ser melhor discutidas por estudiosos de outras áreas do conhecimento. 
 
@@ -63,13 +63,13 @@ Por fim, entendemos que foge da proposta deste trabalho discorrer sobre questõe
 %%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Objetivo Geral}
+\section{Objetivo geral}
 \label{proposta__objetivo-geral}
 
 Este trabalho propõe-se a utilizar o repositório de dados do \gls{TSE} para a construção de grafos referentes às informações de coligações partidárias no Brasil nos anos 1994 à 2014, com o objetivo de exibir métricas e visualizações que possam indicar existência de homofilia na formação de alianças políticas, isto é, se as coligações são formadas por partidos de ideologias semelhantes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Objetivos Específicos}
+\section{Objetivos específicos}
 \label{proposta__objetivos-especificos}
 
 %% Objetivos Específicos: ("pontual", em formato de lista. São pequenos objetivos para chegar/alcançar o objetivo geral do trabalho)

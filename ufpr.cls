@@ -734,4 +734,3 @@
 \endinput
 %%
 %% End of file `ufpr.cls'.
-

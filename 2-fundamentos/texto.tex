@@ -6,33 +6,33 @@
 \section{Grafo}
 \label{conceitos__grafo}
 
-Um \emph{grafo} $G$ é um par ordenado $(V[G], E[G])$ sendo $V[G]$ um conjunto de \emph{vértices} e $E[G]$ um conjunto de \emph{arestas}, onde cada aresta é associada a um par não ordenado de vértices de $G$ através de uma \emph{função de incidência} $\psi_{G}$. Seja $e$ uma aresta e $u$ e $v$ vértices em $G$, tais que $\psi_{G}(e) = \{u, v\}$, assim, pode-se dizer que $e$ é uma aresta que \emph{incide} sobre $u$ e $v$ e que $u$ e $v$ são as \emph{extremidades} de $e$. Além disso, é dito que $u$ e $v$ são \emph{vizinhos} entre si.~\cite{bondy1976graph}.
+Um \emph{grafo} $G$ é um par ordenado $(V(G), E(G))$, sendo $V(G)$ um conjunto de \emph{vértices} e $E(G)$ um conjunto de \emph{arestas}, onde cada aresta é um par não ordenado de vértices de $G$. Seja $e$ uma aresta e $u$ e $v$ vértices em $G$, tais que $e = (u, v)$, assim, pode-se dizer que $e$ é uma aresta que \emph{incide} sobre $u$ e $v$ e que $u$ e $v$ são as \emph{extremidades} de $e$. Além disso, é dito que $u$ e $v$ são \emph{vizinhos} entre si.~\cite{bondy1976graph}.
 
-O número de vértices e arestas em $G$ são denotados por $|V[G]|$ e $|E[G]|
+O número de vértices e arestas em $G$ são denotados por $|V(G)|$ e $|E(G)|
 $ e são chamados de \emph{ordem} e \emph{tamanho} de $G$, respectivamente. Por exemplo,
 
 \makebox[\textwidth]{
-    $G_{1} = (V[G_{1}], E[G_{1}])$
+    $G_1 = (V(G_1), E(G_1))$
 }
 
 \noindent onde
 
 \makebox[\textwidth]{
-    $V(G_{1}) = \{u, v, w\}$
+    $V(G_1) = \{u, v, w\}$
 }
 
 \makebox[\textwidth]{
-    $E(G_{1}) = \{e_{0}, e_{1}\}$
+    $E(G_1) = \{e_0, e_1\}$
 }
 
-\noindent e $\psi_{G_{1}}$ definida por
+\noindent tal que
 
 \makebox[\textwidth]{
-    $\psi_{G_{1}}(e_{0}) = \{u, v\}$
+    $e_0 = \{u, v\}$
 }
 
 \makebox[\textwidth]{
-    $\psi_{G_{1}}(e_{1}) = \{v, w\}$
+    $e_1 = \{v, w\}$
 }
 
 Visualmente, este grafo pode ser representado da seguinte forma:.
@@ -40,15 +40,17 @@ Visualmente, este grafo pode ser representado da seguinte forma:.
 \begin{figure}[h]
 \includegraphics[scale=0.5]{grafo-simples}
 \centering
-\caption{Representação gráfica de $G_{1}$.}
+\caption{Representação gráfica de $G_1$.}
 \label{fig:grafo-simples}
 \end{figure}
+
+Nesta definição são permitidos \emph{laços}, arestas cujas duas extremidades são o mesmo vértice, e \emph{arestas paralelas}, arestas distintas que incidem sobre o mesmo par de vértices. Um grafo sem laços e sem arestas paralelas é chamado de \emph{grafo simples}.
 
 %%%%%
 \subsection{Grafo completo}
 \label{conceitos__grafo--comleto}
 
-Um \emph{grafo completo} $G$ é um grafo onde cada par de vértices é conectado por uma aresta, ou seja, $|E[G]| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo pode ter, onde $n = |V[G]|$.
+Um \emph{grafo completo} $G$ é um grafo simples onde cada par de vértices é conectado por uma aresta, ou seja, $|E(G)| = \frac{n(n-1)}{2}$, que é o número máximo de arestas que um grafo simples pode ter, onde $n = |V(G)|$.
 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{grafo-completo}
@@ -60,13 +62,19 @@ Um \emph{grafo completo} $G$ é um grafo onde cada par de vértices é conectado
 \subsection{Densidade}
 \label{conceitos__grafo--densidade}
 
-A \emph{densidade} de um grafo $G$ é a razão entre a quantidade de arestas $G$ e a quantidade de arestas em um grafo completo com o mesmo número de vértices. De modo informal, caso a densidade de $G$ seja alta, é dito que $G$ é um grafo \emph{denso} e, caso contrário, ele é considerado um grafo \emph{esparso}.
+A \emph{densidade} de um grafo $G$ é a razão entre a quantidade de arestas em $G$ e a quantidade de arestas em um grafo completo com o mesmo número de vértices. De modo informal, caso a densidade de $G$ seja alta, é dito que $G$ é um grafo \emph{denso} e, caso contrário, ele é considerado um grafo \emph{esparso}.
+
+%%%%%
+\subsection{Subgrafo}
+\label{conceitos__grafo--subgrafo}
+
+Um grafo $G_2$ é um \emph{subgrafo} de um grafo $G_1$ se todo vértice de $G_2$ é vértice de $G_1$  e toda aresta de $G_2$ é aresta de $G_1$, ou seja, $V(G_2) \subseteq V(G_1)$ e $E(G_2) \subseteq E(G_1)$. Assim, é dito que $G_1$ \emph{contém} $G_2$ ou que $G_2$ está \emph{contido} em $G_1$.
 
 %%%%%
 \subsection{Clique}
 \label{conceitos__grafo--clique}
 
-Uma \emph{clique} $C$ em um grafo $G$ é um subconjunto de vértices tais que cada par de vértices do subconjunto é conectado por uma aresta. Isso significa dizer $C$ que é um \emph{subgrafo} de $G$, $C \subseteq G$, e que $C$ é completo, ou seja, $|E[C]| = \frac{n_{c}(n_{c}-1)}{2}$, onde $n_{c} = |V[C]|$.
+Uma \emph{clique} $C$ em um grafo $G$ é um subgrafo completo, ou seja, $C \subseteq G$ e $|E(C)| = \frac{n_c(n_c-1)}{2}$, onde $n_c = |V(C)|$.
 
 % \begin{figure}[H]
 % \includegraphics[scale=0.4]{grafo-clique}
@@ -80,7 +88,7 @@ Uma \emph{clique} $C$ em um grafo $G$ é um subconjunto de vértices tais que ca
 
 Grafos são muito utilizados para modelar problemas reais e, em certos problemas, é preciso incluir alguns atributos especiais, como por exemplo um custo, que está associado com as arestas. Em uma rede de tráfego, por exemplo, esse custo poderia representar a distância entre dois lugares. Esses problemas costumam ser modelados por um grafo ponderado.
 
-Para cada aresta $e$ de um grafo $G$, é associado um número real $w(e)$, denominado \emph{peso}. Sendo assim, $G$, com o atributo peso associado as arestas, é chamado de \emph{grafo ponderado}.
+Para cada aresta $e$ em um grafo $G$, é associado um número real $w(e)$, denominado \emph{peso}. Sendo assim, $G$, com o atributo peso associado as arestas, é chamado de \emph{grafo ponderado}.
 
 %%%%%
 \subsection{Grau de um vértice}
@@ -88,7 +96,7 @@ Para cada aresta $e$ de um grafo $G$, é associado um número real $w(e)$, denom
 
 \def \variable {\emph{v}}
 
-O \emph{grau} de um vértice $v$ em um grafo $G$, denotado por $d_{G}(v)$, é o número de arestas em $G$ que incidem sobre $v$. De modo particular, $d_{G}(v)$ é o número de vizinhos de $v$ em $G$. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que $d(G)$ denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde $n$ é o número de vértices de G~\cite{bondy1976graph}.
+O \emph{grau} de um vértice $v$ em um grafo $G$, denotado por $d_G(v)$, é o número de arestas em $G$ que incidem sobre $v$. De modo particular, $d_G(v)$ é o número de vizinhos de $v$ em $G$. Um vértice de grau zero é chamado de \emph{vértice isolado}. O grau mínimo e o grau máximo dos vértices de G são denotados por $\delta(G)$ e $\Delta(G)$, respectivamente, enquanto que $d(G)$ denota seu \emph{grau médio}, $\frac{1}{n}\sum_{v\in V}(d(v))$, onde $n$ é o número de vértices de G~\cite{bondy1976graph}.
 
 Em um grafo ponderado, o grau de um vértice $v$ é dado pela soma dos pesos das arestas que incidem sobre $v$.
 
@@ -107,7 +115,7 @@ Quando um grafo não é conexo, ele se divide em \emph{componentes}, que são su
 \end{figure}
 
 %%%%%
-\subsection{Componente Gigante}
+\subsection{Componente gigante}
 \label{conceitos__grafo--componente-gigante}
 
 \emph{Componente gigante}~\cite{easley2010networks} é um termo informal utilizado para 
@@ -166,7 +174,7 @@ Na figura \ref{fig:grafo-componente-gigante}, é apresentado uma rede de relacio
 % 
 % Na figura \ref{fig:grafo-fechamento-triadico}, por exemplo, o vértice \emph{E} possui coeficiente de \emph{clustering} $\frac{1}{6}$ antes da formação de novas arestas, pois, como \emph{E} tem quatro vizinhos, o número máximo de arestas que poderiam ser formadas entre eles é seis, mas só existe uma. Após a formação de novas arestas, \emph{E} passa a ter um coeficiente de \emph{clustering} de $\frac{4}{10}$.
 % 
-% O \emph{coeficiente de clustering médio} de um grafo é dado por $\bar{C = \frac{1}{n}\sum_{v\in V}(C_{v})$, onde $C_{v}$ é o coeficiente de \emph{clustering} do vértice \emph{v}.
+% O \emph{coeficiente de clustering médio} de um grafo é dado por $\bar{C = \frac{1}{n}\sum_{v\in V}(C_v)$, onde $C_v$ é o coeficiente de \emph{clustering} do vértice \emph{v}.
 % 
 % \todo{Será que precisa colocar algo sobre coeficiente de clustering em grafo ponderado? Pq e é diferente e como os nossos grafos são ponderados... Mas não tem mto material por aí}
 % 
@@ -201,8 +209,6 @@ Muitos dos problemas representados por uma estrutura de grafos apresentam \emph{
 
 \emph{Modularidade} é a medida que busca a divisão de um grafo em comunidades. Quanto maior a modularidade de um grafo, maior a densidade nas conexões entre vértices de uma mesma comunidade.
 
-\todo{talvez colocar componente gigante, homofilia e modularidade em uma outra seção, de redes sociais. Separando as seções em: Grafos, Redes Sociais e Sistema Eleitoral}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sistema eleitoral brasileiro}
 
@@ -220,7 +226,7 @@ Segundo a  Lei nº 9.096~\cite{brasil1995lei9096}, que dispõe sobre partidos po
 
 De modo geral, é possível definir um partido político como um grupo de pessoas com ideias em comum sobre pautas políticas e sociais com o objetivo de formar planos governamentais de acordo com estas ideias~\cite{garibaldi2017partidos}.
 
-Por questões de praticidade, neste trabalho, os partidos políticos serão referenciados apenas por \emph{partidos}. 
+Por questões de praticidade, neste trabalho, os partidos políticos serão referenciados apenas por \emph{partidos} ou \emph{legendas}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -257,7 +263,7 @@ No modelo mais básico de espectro político, que será utilizado neste trabalho
 % \label{fig:eixo-esquerda-direita}
 % \end{figure}
 
-Está fora do escopo deste trabalho explicar tais classificações do espectro político, mas há diversas fontes [\todo{colocar referencias}] onde o leitor interessado pode buscar.
+Está fora do escopo deste trabalho explicar tais classificações do espectro político, mas há diversas fontes~\cite{matos2016esquerdadireita}~\cite{silva2014conceituaccoes}~\cite{da2013partidos} onde o leitor interessado pode buscar mais informações.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -305,4 +311,3 @@ Sendo assim, o algoritmo distribui os vértices uniformemente, tornando também 
 }
 \label{fig:grafo-fruchterman-reingold}
 \end{figure}
-
